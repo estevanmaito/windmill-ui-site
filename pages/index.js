@@ -1,209 +1,100 @@
 import Head from 'next/head'
+import Link from 'next/link'
+import Container from '../components/layout/Container'
+import Nav from '../components/Nav'
 
 export default function Home() {
   return (
-    <div className="container">
+    <>
       <Head>
-        <title>Create Next App</title>
+        <title>Windmill UI</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <div className="bg-pattern">
+        <Nav />
+        <Container>
+          <header className="max-w-2xl py-20">
+            <h1 className="text-5xl font-extrabold leading-none tracking-tight text-gray-900 md:text-6xl">
+              Stunning components for faster web development
+            </h1>
+            <p className="mt-4 font-mono">For free.</p>
+          </header>
+        </Container>
+      </div>
 
-      <main>
-        <h1 className="title">
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className="description">
-          Get started by editing <code>pages/index.js</code>
-        </p>
-
-        <div className="grid">
-          <a href="https://nextjs.org/docs" className="card">
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className="card">
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className="card"
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="card"
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
+      <Container className="my-16">
+        <div className="grid gap-10 font-mono md:gap-4 md:grid-cols-3">
+          <div className="text-gray-800">
+            <p className="mb-2 text-lg font-semibold">Windmill Dashboard HTML</p>
+            <p className="mb-2">No frameworks, no dependencies. Pure, flexible web development.</p>
+            <Link href="/dashboard-html">
+              <a className="border-b-2 border-primary">view more</a>
+            </Link>
+          </div>
+          <div className="text-gray-800">
+            <p className="mb-2 text-lg font-semibold">Windmill Dashboard React</p>
+            <p className="mb-2">Four 100 scores and PWA ready. Just connect your data.</p>
+            <Link href="/dashboard-react">
+              <a className="border-b-2 border-primary">view more</a>
+            </Link>
+          </div>
+          <div className="text-gray-800">
+            <p className="mb-2 text-lg font-semibold">Windmill React UI</p>
+            <p className="mb-2">
+              The component library for fast and accessible development of gorgeous interfaces.
             </p>
-          </a>
+            <Link href="/react-ui">
+              <a className="border-b-2 border-primary">view more</a>
+            </Link>
+          </div>
         </div>
-      </main>
+      </Container>
 
-      <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className="logo" />
-        </a>
+      <Container className="my-16">
+        <h2 className="mb-6 text-xl text-gray-800">Features</h2>
+        <div className="font-mono">
+          <div className="space-y-4 text-gray-800">
+            <p className="">Effortless accessible</p>
+            <p className="">Dark mode included</p>
+            <p className="">Multiple components</p>
+            <p className="">Styled with Tailwind CSS</p>
+          </div>
+        </div>
+      </Container>
+
+      <Container>
+        <div className="grid my-20 md:grid-cols-2">
+          <div></div>
+          <div>
+            <p className="mb-4 font-mono text-gray-800">
+              This is the work of a single developer, creating fully functional, componentized and
+              production-ready applications for free. I would love to continue this way and avoid
+              the <strong>"Want this feature? Pay for it!"</strong> way.
+            </p>
+            <p className="mb-8 font-mono text-gray-800">
+              You can help me keep it this way and receive some benefits by sponsoring me, so I can
+              give 100% of my time to it.
+            </p>
+            <a
+              className="px-6 py-2 font-mono text-lg text-black bg-primary focus:outline-none"
+              href="https://www.patreon.com/estevanmaito"
+            >
+              Become a sponsor
+            </a>
+          </div>
+        </div>
+      </Container>
+
+      <footer className="py-20 font-mono">
+        <Container>
+          <p className="text-center text-gray-800">
+            Made by{' '}
+            <a className="border-b-2 border-primary" href="https://twitter.com/estevanmaito">
+              Estevan Maito
+            </a>
+          </p>
+        </Container>
       </footer>
-
-      <style jsx>{`
-        .container {
-          min-height: 100vh;
-          padding: 0 0.5rem;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-
-        main {
-          padding: 5rem 0;
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-
-        footer {
-          width: 100%;
-          height: 100px;
-          border-top: 1px solid #eaeaea;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        footer img {
-          margin-left: 0.5rem;
-        }
-
-        footer a {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        a {
-          color: inherit;
-          text-decoration: none;
-        }
-
-        .title a {
-          color: #0070f3;
-          text-decoration: none;
-        }
-
-        .title a:hover,
-        .title a:focus,
-        .title a:active {
-          text-decoration: underline;
-        }
-
-        .title {
-          margin: 0;
-          line-height: 1.15;
-          font-size: 4rem;
-        }
-
-        .title,
-        .description {
-          text-align: center;
-        }
-
-        .description {
-          line-height: 1.5;
-          font-size: 1.5rem;
-        }
-
-        code {
-          background: #fafafa;
-          border-radius: 5px;
-          padding: 0.75rem;
-          font-size: 1.1rem;
-          font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-        }
-
-        .grid {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-wrap: wrap;
-
-          max-width: 800px;
-          margin-top: 3rem;
-        }
-
-        .card {
-          margin: 1rem;
-          flex-basis: 45%;
-          padding: 1.5rem;
-          text-align: left;
-          color: inherit;
-          text-decoration: none;
-          border: 1px solid #eaeaea;
-          border-radius: 10px;
-          transition: color 0.15s ease, border-color 0.15s ease;
-        }
-
-        .card:hover,
-        .card:focus,
-        .card:active {
-          color: #0070f3;
-          border-color: #0070f3;
-        }
-
-        .card h3 {
-          margin: 0 0 1rem 0;
-          font-size: 1.5rem;
-        }
-
-        .card p {
-          margin: 0;
-          font-size: 1.25rem;
-          line-height: 1.5;
-        }
-
-        .logo {
-          height: 1em;
-        }
-
-        @media (max-width: 600px) {
-          .grid {
-            width: 100%;
-            flex-direction: column;
-          }
-        }
-      `}</style>
-
-      <style jsx global>{`
-        html,
-        body {
-          padding: 0;
-          margin: 0;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-            sans-serif;
-        }
-
-        * {
-          box-sizing: border-box;
-        }
-      `}</style>
-    </div>
+    </>
   )
 }
