@@ -72,7 +72,7 @@ export default function Home(props) {
               <p className="mb-4">
                 If you're looking for the React version,{' '}
                 <Link href="/sponsor">
-                  <a className="border-b-2 border-primary">go here</a>
+                  <a className="border-b border-primary">go here</a>
                 </Link>
                 . This application is perfect if you are looking for flexibility, like a server
                 rendered or a framework implementation that is not currently offered, or just don't
@@ -118,7 +118,7 @@ export default function Home(props) {
                 <li>
                   <span className="ml-2">
                     <Link href="/sponsor">
-                      <a className="border-b-2 border-primary">Sponsor me</a>
+                      <a className="border-b border-primary">Sponsor me</a>
                     </Link>{' '}
                     and have a voice deciding the next features and have early access to them
                   </span>

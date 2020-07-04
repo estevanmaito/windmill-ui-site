@@ -36,7 +36,7 @@ export default function Home(props) {
             <p className="mb-2 text-lg font-semibold">Components</p>
             <p className="mb-2">No frameworks, no dependencies. Pure, flexible web development.</p>
             <Link href="/dashboard-html">
-              <a className="border-b-2 border-primary">view more</a>
+              <a className="border-b border-primary">view more</a>
             </Link>
           </div>
           <div className="text-gray-800">

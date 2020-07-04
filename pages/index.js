@@ -28,14 +28,14 @@ export default function Home() {
             <p className="mb-2 text-lg font-semibold">Windmill Dashboard HTML</p>
             <p className="mb-2">No frameworks, no dependencies. Pure, flexible web development.</p>
             <Link href="/dashboard-html">
-              <a className="border-b-2 border-primary">view more</a>
+              <a className="border-b border-primary">view more</a>
             </Link>
           </div>
           <div className="text-gray-800">
             <p className="mb-2 text-lg font-semibold">Windmill Dashboard React</p>
             <p className="mb-2">Four 100 scores and PWA ready. Just connect your data.</p>
             <Link href="/dashboard-react">
-              <a className="border-b-2 border-primary">view more</a>
+              <a className="border-b border-primary">view more</a>
             </Link>
           </div>
           <div className="text-gray-800">
@@ -44,7 +44,7 @@ export default function Home() {
               The component library for fast and accessible development of gorgeous interfaces.
             </p>
             <Link href="/react-ui">
-              <a className="border-b-2 border-primary">view more</a>
+              <a className="border-b border-primary">view more</a>
             </Link>
           </div>
         </div>
@@ -89,7 +89,7 @@ export default function Home() {
         <Container>
           <p className="text-center text-gray-800">
             Made by{' '}
-            <a className="border-b-2 border-primary" href="https://twitter.com/estevanmaito">
+            <a className="border-b border-primary" href="https://twitter.com/estevanmaito">
               Estevan Maito
             </a>
           </p>

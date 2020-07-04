@@ -100,7 +100,7 @@ export default function Home(props) {
                   <span className="ml-2">
                     Built on top of{' '}
                     <Link href="/react-ui">
-                      <a className="border-b-2 border-primary">Windmill React UI</a>
+                      <a className="border-b border-primary">Windmill React UI</a>
                     </Link>
                   </span>
                 </li>
@@ -128,7 +128,7 @@ export default function Home(props) {
                 <li>
                   <span className="ml-2">
                     <Link href="/sponsor">
-                      <a className="border-b-2 border-primary">Sponsor me</a>
+                      <a className="border-b border-primary">Sponsor me</a>
                     </Link>{' '}
                     and have a voice deciding the next features and have early access to them
                   </span>
