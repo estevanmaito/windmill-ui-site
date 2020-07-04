@@ -6,7 +6,7 @@ function Nav() {
   return (
     <Container className="py-4">
       <Link href="/">
-        <a className="block font-mono font-bold text-right text-gray-800">windmill ui</a>
+        <a className="block font-mono font-semibold text-right text-gray-800">windmill ui</a>
       </Link>
     </Container>
   )
