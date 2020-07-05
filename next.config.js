@@ -4,7 +4,7 @@ module.exports = withMdxEnhanced({
   layoutPath: 'layouts',
   fileExtensions: ['mdx'],
   remarkPlugins: [],
-  rehypePlugins: [],
+  rehypePlugins: [require('rehype-autolink-headings')],
   extendFrontMatter: {
     process: (mdxContent, frontMatter) => {},
     phase: 'prebuild|loader|both',
