@@ -3,16 +3,20 @@
 @import 'tailwindcss/utilities';
 
 .markdown {
-  h1 {
-    @apply text-3xl font-semibold mb-4;
-  }
-
   h2 {
-    @apply text-xl font-semibold mb-4 mt-8;
+    @apply text-xl font-semibold mb-4;
+
+    &:not(:first-of-type) {
+      @apply mt-12;
+    }
   }
 
   > h1, > h2, > h3, > h4, > h5, > h6, > p, > span, > table {
     @apply text-gray-800;
+  }
+
+  p > a, > a {
+    @apply border-b border-primary;
   }
 
   hr {
@@ -25,11 +29,23 @@
     th {
       @apply text-left bg-gray-100 font-semibold px-1 py-2;
     }
+
+    tbody tr {
+      @apply border-t;
+    }
+
+    td {
+      @apply px-1 py-2;
+    }
   }
 
   p > code,
   table code {
     @apply text-sm bg-gray-100 py-px px-2;
+  }
+
+  #__live-preview > * {
+    @apply mr-4 mb-4;
   }
 }
 
