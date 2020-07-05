@@ -68,7 +68,7 @@ export default function Home(props) {
             <div className="mb-8 text-gray-800">
               <h2 className="mb-2 text-2xl font-semibold">Description</h2>
               <p className="mb-4">
-                This is not a template. This is complete application, built on top of React, with
+                This is not a template. This is a complete application, built on top of React, with
                 all tiny details taken care of so you just need to bring the data to feed it.
               </p>
               <p>
