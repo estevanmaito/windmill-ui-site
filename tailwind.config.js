@@ -28,5 +28,5 @@ module.exports = {
     },
   },
   variants: {},
-  plugins: [],
+  plugins: [require('windmill-react-ui/plugin')],
 }
