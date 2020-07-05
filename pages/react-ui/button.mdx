@@ -57,7 +57,14 @@ The `tag` is responsible for rendering a specific HTML element as a `Button`, an
 
 ## Props overview
 
-| Prop     | Description                    | Type                                         | Default   |
-| -------- | ------------------------------ | -------------------------------------------- | --------- |
-| `size`   | define the size of component   | `large`, `large`, `regular`, `small`, `icon` | `regular` |
-| `layout` | define the layout of component | `primary`, `outline`, `link`                 | `primary` |
+| Prop       | Description                    | Type                                          | Default   |
+| ---------- | ------------------------------ | --------------------------------------------- | --------- |
+| `size`     | define the size of component   | `larger`, `large`, `regular`, `small`, `icon` | `regular` |
+| `layout`   | define the layout of component | `primary`, `outline`, `link`                  | `primary` |
+| `disabled` | disable state of button        | `boolean`                                     | `false`   |
+| `block`    | expand full width              | `boolean`                                     | `false`   |
+| `tag`      | define the element tag         | `string`, `ReactNode`                         | `button`  |
+
+## Customizing
+
+See [Customization]() to learn how to change `defaultTheme` styles.
