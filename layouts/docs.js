@@ -1,10 +1,13 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { useRouter } from 'next/router'
 import Container from '../components/layout/Container'
 import Nav from '../components/Nav'
+import Footer from '../components/Footer'
 import pages from '../pages.json'
 
 export default (frontMatter) => {
   return ({ children }) => {
+    const router = useRouter()
     return (
       <>
         <style
@@ -20,8 +23,8 @@ export default (frontMatter) => {
         <div className="bg-pattern">
           <Nav />
           <Container>
-            <header className="max-w-2xl py-20">
-              <h1 className="text-5xl font-extrabold leading-none tracking-tight text-gray-900 md:text-6xl">
+            <header className="max-w-2xl py-20 text-gray-700">
+              <h1 className="text-5xl font-extrabold leading-none tracking-tight font-montserrat md:text-6xl">
                 {frontMatter.title}
               </h1>
               <p className="mt-4 font-mono">{frontMatter.description}</p>
@@ -29,12 +32,19 @@ export default (frontMatter) => {
           </Container>
         </div>
         <Container className="my-16">
-          <div className="grid grid-cols-12 gap-8 font-mono">
+          <div className="grid grid-cols-12 gap-8">
             <aside className="col-span-2">
-              <span className="">Components</span>
-              <ul>
+              <span className="font-mono text-sm font-semibold tracking-wide text-gray-500 uppercase">
+                Components
+              </span>
+              <ul className="text-gray-500">
                 {pages.map((page) => (
-                  <li key={page.url}>
+                  <li
+                    key={page.url}
+                    className={`${
+                      router.pathname.split('/')[2] === page.url && 'text-gray-700 font-semibold'
+                    }`}
+                  >
                     <a href={page.url}>{page.title}</a>
                   </li>
                 ))}
@@ -44,16 +54,7 @@ export default (frontMatter) => {
             <aside className="col-span-2"></aside>
           </div>
         </Container>
-        <footer className="py-20 font-mono">
-          <Container>
-            <p className="text-center text-gray-800">
-              Made by{' '}
-              <a className="border-b border-primary" href="https://twitter.com/estevanmaito">
-                Estevan Maito
-              </a>
-            </p>
-          </Container>
-        </footer>
+        <Footer />
       </>
     )
   }
