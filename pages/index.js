@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Container from '../components/layout/Container'
 import Nav from '../components/Nav'
+import Footer from '../components/Footer'
 
 export default function Home() {
   return (
@@ -14,7 +15,7 @@ export default function Home() {
         <Nav />
         <Container>
           <header className="max-w-2xl py-20">
-            <h1 className="text-5xl font-extrabold leading-none tracking-tight text-gray-900 md:text-6xl">
+            <h1 className="text-5xl font-extrabold leading-none tracking-tight text-gray-900 font-montserrat md:text-6xl">
               Stunning components for faster web development
             </h1>
             <p className="mt-4 font-mono">For free.</p>
@@ -85,16 +86,7 @@ export default function Home() {
         </div>
       </Container>
 
-      <footer className="py-20 font-mono">
-        <Container>
-          <p className="text-center text-gray-800">
-            Made by{' '}
-            <a className="border-b border-primary" href="https://twitter.com/estevanmaito">
-              Estevan Maito
-            </a>
-          </p>
-        </Container>
-      </footer>
+      <Footer />
     </>
   )
 }

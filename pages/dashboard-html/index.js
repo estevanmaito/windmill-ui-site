@@ -5,6 +5,7 @@ import Banner from '../../components/Banner'
 import Nav from '../../components/Nav'
 import Button from '../../components/Button'
 import ButtonOutline from '../../components/ButtonOutline'
+import Footer from '../../components/Footer'
 
 export default function Home(props) {
   return (
@@ -22,7 +23,7 @@ export default function Home(props) {
         <Nav />
         <Container>
           <header className="max-w-2xl py-20">
-            <h1 className="text-5xl font-extrabold leading-none tracking-tight text-gray-900 md:text-6xl">
+            <h1 className="text-5xl font-extrabold leading-none tracking-tight text-gray-900 font-montserrat md:text-6xl">
               Windmill Dashboard HTML
             </h1>
             <p className="mt-4 font-mono">
@@ -128,6 +129,8 @@ export default function Home(props) {
           </main>
         </div>
       </Container>
+
+      <Footer />
     </>
   )
 }
