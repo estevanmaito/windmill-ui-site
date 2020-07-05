@@ -1,0 +1,62 @@
+---
+layout: 'docs'
+title: 'Button'
+---
+
+## Size
+
+There are four sizes, applied by the prop `size`: `larger`, `large`, `regular` (default), `small` and `icon`.
+
+```jsx live
+<Button size="larger">Larger</Button>
+<Button size="large">Large</Button>
+<Button>Regular</Button>
+<Button size="small">Small</Button>
+```
+
+## Layout
+
+There are three styles, applied by the prop `layout`: `primary` (default), `outline` and `link`.
+
+```jsx live
+<Button>Primary</Button>
+<Button layout="outline">Outline</Button>
+<Button layout="link">Link</Button>
+```
+
+## Disabled
+
+The `disabled` prop applies disabled styles to any button.
+
+```jsx live
+<Button disabled>Primary</Button>
+<Button disabled layout="outline">Outline</Button>
+<Button disabled layout="link">Link</Button>
+```
+
+## Block
+
+The `block` property is a shortcut for `className="w-full"` and makes the `Button` span the whole width of its parent.
+
+```jsx live
+<Button block>Primary</Button>
+<Button block layout="outline">Outline</Button>
+<Button block layout="link">Link</Button>
+```
+
+## Tag
+
+The `tag` is responsible for rendering a specific HTML element as a `Button`, and is mostly used to create anchors styled as buttons. You can also pass another component as a `tag`, like a `Link` from `react-router`, eg: `tag={Link}`
+
+```jsx live
+<Button tag="a" href="#">
+  Primary
+</Button>
+```
+
+## Props overview
+
+| Prop     | Description                    | Type                                         | Default   |
+| -------- | ------------------------------ | -------------------------------------------- | --------- |
+| `size`   | define the size of component   | `large`, `large`, `regular`, `small`, `icon` | `regular` |
+| `layout` | define the layout of component | `primary`, `outline`, `link`                 | `primary` |
