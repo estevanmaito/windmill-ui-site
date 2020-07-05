@@ -24,23 +24,23 @@ export default function Home() {
       </div>
 
       <Container className="my-16">
-        <div className="grid gap-10 font-mono md:gap-4 md:grid-cols-3">
+        <div className="grid gap-10 md:gap-8 md:grid-cols-3">
           <div className="text-gray-700">
-            <p className="mb-2 text-lg font-semibold">Windmill Dashboard HTML</p>
+            <p className="mb-2 font-mono text-lg font-semibold">Windmill Dashboard HTML</p>
             <p className="mb-2">No frameworks, no dependencies. Pure, flexible web development.</p>
             <Link href="/dashboard-html">
               <a className="border-b border-primary">view more</a>
             </Link>
           </div>
           <div className="text-gray-700">
-            <p className="mb-2 text-lg font-semibold">Windmill Dashboard React</p>
+            <p className="mb-2 font-mono text-lg font-semibold">Windmill Dashboard React</p>
             <p className="mb-2">Four 100 scores and PWA ready. Just connect your data.</p>
             <Link href="/dashboard-react">
               <a className="border-b border-primary">view more</a>
             </Link>
           </div>
           <div className="text-gray-700">
-            <p className="mb-2 text-lg font-semibold">Windmill React UI</p>
+            <p className="mb-2 font-mono text-lg font-semibold">Windmill React UI</p>
             <p className="mb-2">
               The component library for fast and accessible development of gorgeous interfaces.
             </p>
@@ -52,8 +52,8 @@ export default function Home() {
       </Container>
 
       <Container className="my-16">
-        <h2 className="mb-6 text-xl text-gray-700">Features</h2>
-        <div className="font-mono">
+        <h2 className="mb-6 font-mono text-xl font-semibold text-gray-700">Features</h2>
+        <div>
           <div className="space-y-4 text-gray-700">
             <p className="">Effortless accessible</p>
             <p className="">Dark mode included</p>
@@ -67,12 +67,12 @@ export default function Home() {
         <div className="grid my-20 md:grid-cols-2">
           <div></div>
           <div>
-            <p className="mb-4 font-mono text-gray-700">
+            <p className="mb-4 text-gray-700">
               This is the work of a single developer, creating fully functional, componentized and
               production-ready applications for free. I would love to continue this way and avoid
               the <strong>"Want this feature? Pay for it!"</strong> way.
             </p>
-            <p className="mb-8 font-mono text-gray-700">
+            <p className="mb-8 text-gray-700">
               You can help me keep it this way and receive some benefits by sponsoring me, so I can
               give 100% of my time to it.
             </p>

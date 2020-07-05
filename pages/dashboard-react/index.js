@@ -32,7 +32,7 @@ export default function Home(props) {
       </div>
 
       <Container className="my-16">
-        <div className="grid gap-4 font-mono text-gray-700 md:grid-cols-10">
+        <div className="grid gap-4 text-gray-700 md:grid-cols-10">
           <div className="md:col-span-7">
             <div className="p-4 border md:mb-10">
               <img src="/img/Dashboard.png" alt="Dashboard preview" loading="lazy" />
@@ -43,15 +43,15 @@ export default function Home(props) {
             <div className="p-4 border">
               <div className="flex justify-between">
                 <p>Version</p>
-                <p className="font-medium">{props.lastRelease.name}</p>
+                <p className="font-mono text-sm font-semibold">{props.lastRelease.name}</p>
               </div>
               <div className="flex justify-between">
                 <p>Last update</p>
-                <p className="font-medium">07/2020</p>
+                <p className="font-mono text-sm font-semibold">07/2020</p>
               </div>
               <div className="flex justify-between">
                 <p>License</p>
-                <p className="font-medium">MIT</p>
+                <p className="font-mono text-sm font-semibold">MIT</p>
               </div>
               <div className="flex justify-between mb-4">
                 <p>Read docs</p>
@@ -64,10 +64,10 @@ export default function Home(props) {
           </aside>
         </div>
 
-        <div className="grid gap-4 font-mono text-gray-700 md:grid-cols-10">
+        <div className="grid gap-4 text-gray-700 md:grid-cols-10">
           <main className="md:col-span-7">
             <div className="mb-8 text-gray-700">
-              <h2 className="mb-2 text-2xl font-semibold">Description</h2>
+              <h2 className="mb-2 font-mono text-xl font-semibold">Description</h2>
               <p className="mb-4">
                 This is not a template. This is a complete application, built on top of React, with
                 all tiny details taken care of so you just need to bring the data to feed it.
@@ -79,7 +79,7 @@ export default function Home(props) {
               </p>
             </div>
             <div>
-              <h2 className="mb-2 text-2xl font-semibold text-gray-700">Features</h2>
+              <h2 className="mb-2 font-mono text-xl font-semibold text-gray-700">Features</h2>
               <ul className="mb-4 space-y-2 list-inside list-square">
                 <li>
                   <span className="ml-2">
