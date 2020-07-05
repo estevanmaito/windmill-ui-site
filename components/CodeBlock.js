@@ -3,7 +3,7 @@ import Highlight, { defaultProps } from 'prism-react-renderer'
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live'
 import { mdx } from '@mdx-js/react'
 import * as Windmill from 'windmill-react-ui'
-import theme from 'prism-react-renderer/themes/nightOwl'
+import theme from '../prismTheme'
 
 export default ({ children, className, live, render }) => {
   const language = className.replace(/language-/, '')
@@ -21,9 +21,12 @@ export default ({ children, className, live, render }) => {
             id="__live-preview"
           />
           <div
-            className="flex-grow flex-shrink overflow-x-auto text-sm"
-            style={{ backgroundColor: '#011627' }}
+            className="relative flex-grow flex-shrink overflow-x-auto text-sm"
+            style={{ backgroundColor: '#1E1E1E' }}
           >
+            <span className="absolute right-0 px-2 py-1 font-mono text-xs text-black bg-primary">
+              live editor
+            </span>
             <LiveEditor
               className="float-left min-w-full overflow-hidden live-editor"
               style={{

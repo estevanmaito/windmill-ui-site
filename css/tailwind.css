@@ -67,6 +67,14 @@
     background-repeat: no-repeat;
   }
   /* end rehype-autolink-headings styles  */
+
+  /* start react-live styles  */
+  .npm__react-simple-code-editor__textarea {
+    &:focus {
+      @apply outline-none;
+    }
+  }
+  /* end react-live styles  */
 }
 
 /* ::selection {
