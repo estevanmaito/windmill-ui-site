@@ -22,7 +22,7 @@ module.exports = {
         primary: '0 10px 15px -3px rgba(2,248,186, 0.1), 0 4px 6px -2px rgba(2,248,186, 0.05)',
       },
       fontFamily: {
-        sans: ['Montserrat', ...defaultTheme.fontFamily.sans],
+        montserrat: ['Montserrat', ...defaultTheme.fontFamily.sans],
         mono: ['Fira Code', ...defaultTheme.fontFamily.mono],
       },
     },
