@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "predev": "node getUrls.js ./pages/react-ui",
     "dev": "next dev",
+    "prebuild": "node getUrls.js ./pages/react-ui",
     "build": "next build",
     "start": "next start"
   },
@@ -17,6 +19,7 @@
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-live": "2.2.2",
+    "rehype-autolink-headings": "4.0.0",
     "windmill-react-ui": "0.1.0-alpha.8"
   },
   "devDependencies": {

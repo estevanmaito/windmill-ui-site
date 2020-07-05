@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Container from '../components/layout/Container'
 import Nav from '../components/Nav'
+import pages from '../pages.json'
 
 export default (frontMatter) => {
   return ({ children }) => {
@@ -23,9 +24,7 @@ export default (frontMatter) => {
               <h1 className="text-5xl font-extrabold leading-none tracking-tight text-gray-900 md:text-6xl">
                 {frontMatter.title}
               </h1>
-              <p className="mt-4 font-mono">
-                Four 100 scores and PWA ready. Just connect your data.
-              </p>
+              <p className="mt-4 font-mono">{frontMatter.description}</p>
             </header>
           </Container>
         </div>
@@ -34,7 +33,11 @@ export default (frontMatter) => {
             <aside className="col-span-2">
               <span className="">Components</span>
               <ul>
-                <li></li>
+                {pages.map((page) => (
+                  <li key={page.url}>
+                    <a href={page.url}>{page.title}</a>
+                  </li>
+                ))}
               </ul>
             </aside>
             <main className="col-span-8 markdown">{children}</main>
