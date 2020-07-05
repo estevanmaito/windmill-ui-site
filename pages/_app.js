@@ -1,4 +1,16 @@
 import React from 'react'
+import { MDXProvider } from '@mdx-js/react'
 import '../css/tailwind.css'
 
-export default ({ Component, pageProps }) => <Component {...pageProps} />
+import CodeBlock from '../components/CodeBlock'
+
+const mdComponents = {
+  pre: (props) => <div className="my-4" {...props} />,
+  code: CodeBlock,
+}
+
+export default ({ Component, pageProps }) => (
+  <MDXProvider components={mdComponents}>
+    <Component {...pageProps} />
+  </MDXProvider>
+)
