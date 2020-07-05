@@ -2,9 +2,40 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-::selection {
-  background-color: yellow;
+.markdown {
+  h1 {
+    @apply text-3xl font-semibold mb-4;
+  }
+
+  h2 {
+    @apply text-xl font-semibold mb-4 mt-8;
+  }
+
+  > h1, > h2, > h3, > h4, > h5, > h6, > p, > span, > table {
+    @apply text-gray-800;
+  }
+
+  hr {
+    @apply my-4;
+  }
+
+  > table {
+    @apply border w-full;
+
+    th {
+      @apply text-left bg-gray-100 font-semibold px-1 py-2;
+    }
+  }
+
+  p > code,
+  table code {
+    @apply text-sm bg-gray-100 py-px px-2;
+  }
 }
+
+/* ::selection {
+  background-color: yellow;
+} */
 
 .bg-pattern {
   background-color: #ffffff;
