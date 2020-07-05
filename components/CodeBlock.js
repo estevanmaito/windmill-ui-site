@@ -16,9 +16,12 @@ export default ({ children, className, live, render }) => {
           scope={{ mdx, ...Windmill }}
           theme={theme}
         >
-          <LivePreview className="p-4 font-sans border-t border-l border-r" />
+          <LivePreview
+            className="pt-4 pl-4 pr-4 border-t border-l border-r font-inter"
+            id="__live-preview"
+          />
           <div
-            className="flex-grow flex-shrink overflow-x-auto"
+            className="flex-grow flex-shrink overflow-x-auto text-sm"
             style={{ backgroundColor: '#011627' }}
           >
             <LiveEditor
