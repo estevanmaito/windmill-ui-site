@@ -22,8 +22,8 @@ export default function Home(props) {
       <div className="bg-pattern">
         <Nav />
         <Container>
-          <header className="max-w-2xl py-20">
-            <h1 className="text-5xl font-extrabold leading-none tracking-tight text-gray-900 font-montserrat md:text-6xl">
+          <header className="max-w-2xl py-20 text-gray-700">
+            <h1 className="text-5xl font-extrabold leading-none tracking-tight font-montserrat md:text-6xl">
               Windmill Dashboard React
             </h1>
             <p className="mt-4 font-mono">Four 100 scores and PWA ready. Just connect your data.</p>
@@ -32,7 +32,7 @@ export default function Home(props) {
       </div>
 
       <Container className="my-16">
-        <div className="grid gap-4 font-mono text-gray-800 md:grid-cols-10">
+        <div className="grid gap-4 font-mono text-gray-700 md:grid-cols-10">
           <div className="md:col-span-7">
             <div className="p-4 border md:mb-10">
               <img src="/img/Dashboard.png" alt="Dashboard preview" loading="lazy" />
@@ -64,9 +64,9 @@ export default function Home(props) {
           </aside>
         </div>
 
-        <div className="grid gap-4 font-mono text-gray-800 md:grid-cols-10">
+        <div className="grid gap-4 font-mono text-gray-700 md:grid-cols-10">
           <main className="md:col-span-7">
-            <div className="mb-8 text-gray-800">
+            <div className="mb-8 text-gray-700">
               <h2 className="mb-2 text-2xl font-semibold">Description</h2>
               <p className="mb-4">
                 This is not a template. This is a complete application, built on top of React, with
@@ -79,7 +79,7 @@ export default function Home(props) {
               </p>
             </div>
             <div>
-              <h2 className="mb-2 text-2xl font-semibold text-gray-800">Features</h2>
+              <h2 className="mb-2 text-2xl font-semibold text-gray-700">Features</h2>
               <ul className="mb-4 space-y-2 list-inside list-square">
                 <li>
                   <span className="ml-2">

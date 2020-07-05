@@ -19,8 +19,8 @@ export default function Home(props) {
       <div className="bg-pattern">
         <Nav />
         <Container>
-          <header className="max-w-2xl py-20">
-            <h1 className="text-5xl font-extrabold leading-none tracking-tight text-gray-900 md:text-6xl">
+          <header className="max-w-2xl py-20 text-gray-700">
+            <h1 className="text-5xl font-extrabold leading-none tracking-tight md:text-6xl">
               Windmill React UI
             </h1>
             <p className="mt-4 font-mono">
