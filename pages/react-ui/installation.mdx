@@ -1,0 +1,51 @@
+---
+layout: 'docs'
+title: 'Installation'
+description: 'Getting started with Windmill'
+---
+
+## Install
+
+The first of three steps is installing Windmill via npm:
+
+```sh title=Terminal
+npm install windmill-react-ui
+```
+
+## Add to Tailwind
+
+The second step is to add Windmill to your Tailwind configuration file as a plugin. If you don't have Tailwind configured yet, [see the docs](https://tailwindcss.com/docs/installation).
+
+```js title=tailwind.config.js
+const windmillPlugin = require('windmill-react-ui/plugin')
+
+module.exports = {
+  purge: [],
+  theme: {},
+  variants: {},
+  plugins: [windmillPlugin()],
+}
+```
+
+## Usage
+
+The last step is to add it to your React project, enclosing your root component with the component `Windmill`.
+
+```jsx title=App.js
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { Windmill } from 'windmill-react-ui'
+
+ReactDOM.render(
+  <Windmill>
+    <App />
+  </Windmill>,
+  document.getElementById('root')
+)
+```
+
+If you do NOT want dark theme features and/or customize the default theme, you can skip enclosing your components within `Windmill`. Although I think if you're creating an application in 2020, it should offer a darker theme.
+
+## Dark theme
+
+Read more about it in its [own section](dark-theme).

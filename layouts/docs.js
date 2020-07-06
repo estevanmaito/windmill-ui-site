@@ -44,7 +44,7 @@ export default (frontMatter) => {
                       'text-gray-700 font-semibold'
                     }`}
                   >
-                    <Link href="../installation">
+                    <Link href="/react-ui/installation">
                       <a>Installation</a>
                     </Link>
                   </li>
@@ -54,7 +54,7 @@ export default (frontMatter) => {
                       'text-gray-700 font-semibold'
                     }`}
                   >
-                    <Link href="../customization">
+                    <Link href="/react-ui/customization">
                       <a>Customization</a>
                     </Link>
                   </li>
