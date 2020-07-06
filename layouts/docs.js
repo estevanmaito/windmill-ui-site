@@ -1,5 +1,6 @@
 import React from 'react'
 import { useRouter } from 'next/router'
+import Link from 'next/link'
 import Container from '../components/layout/Container'
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
@@ -46,7 +47,7 @@ export default (frontMatter) => {
                         router.pathname.split('/')[2] === page.url && 'text-gray-700 font-semibold'
                       }`}
                     >
-                      <a href={page.url}>{page.title}</a>
+                      <Link href={page.url}><a>{page.title}</a></Link>
                     </li>
                   ))}
                 </ul>
