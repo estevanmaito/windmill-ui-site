@@ -1,7 +1,7 @@
 // Converted automatically using ./tools/themeFromVsCode
 var theme = {
   plain: {
-    color: '#9CDCFE',
+    color: 'rgb(136,210,245)',
     backgroundColor: '#1E1E1E',
   },
   styles: [
@@ -38,13 +38,13 @@ var theme = {
     {
       types: ['attr-name', 'variable'],
       style: {
-        color: 'rgb(156, 220, 254)',
+        color: 'rgb(249,152,172)',
       },
     },
     {
       types: ['deleted', 'string', 'attr-value'],
       style: {
-        color: 'rgb(206, 145, 120)',
+        color: 'rgb(212, 212, 212)',
       },
     },
     {
