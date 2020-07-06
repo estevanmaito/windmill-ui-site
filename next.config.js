@@ -6,7 +6,20 @@ module.exports = withMdxEnhanced({
   remarkPlugins: [],
   rehypePlugins: [require('rehype-slug'), require('rehype-autolink-headings')],
   extendFrontMatter: {
-    process: (mdxContent, frontMatter) => {},
-    phase: 'prebuild|loader|both',
+    process: async (mdxContent, frontMatter) => {
+      const innerLinks = []
+
+      const matches = mdxContent.matchAll(/##\s(.*)/g)
+
+      for (const match of matches) {
+        innerLinks.push({
+          title: match[1],
+          url: `#${match[1].split(' ').join('-').toLowerCase()}`,
+        })
+      }
+
+      return { innerLinks }
+    },
+    phase: 'both',
   },
 })()
