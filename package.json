@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "predev": "node getUrls.js ./pages/react-ui",
+    "predev": "node getComponentsPages.js ./pages/react-ui/components",
     "dev": "next dev",
-    "prebuild": "node getUrls.js ./pages/react-ui",
+    "prebuild": "node getComponentsPages.js ./pages/react-ui/components",
     "build": "next build",
     "start": "next start"
   },

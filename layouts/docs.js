@@ -44,10 +44,12 @@ export default (frontMatter) => {
                     <li
                       key={page.url}
                       className={`${
-                        router.pathname.split('/')[2] === page.url && 'text-gray-700 font-semibold'
+                        router.pathname.split('/')[3] === page.url && 'text-gray-700 font-semibold'
                       }`}
                     >
-                      <Link href={page.url}><a>{page.title}</a></Link>
+                      <Link href={page.url}>
+                        <a>{page.title}</a>
+                      </Link>
                     </li>
                   ))}
                 </ul>
