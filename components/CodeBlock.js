@@ -5,7 +5,7 @@ import { mdx } from '@mdx-js/react'
 import * as Windmill from 'windmill-react-ui'
 import theme from '../prismTheme'
 
-export default ({ children, className, live, render }) => {
+export default ({ children, className, live, render, title }) => {
   const language = className.replace(/language-/, '')
   if (live) {
     return (
@@ -53,10 +53,15 @@ export default ({ children, className, live, render }) => {
   }
 
   return (
-    <div className="overflow-hidden rounded-lg">
+    <div className="overflow-hidden text-sm">
+      {title && (
+        <div className="px-2 py-1 bg-gray-100 border-t border-l border-r">
+          <span className="font-mono text-xs text-gray-600">{title}</span>
+        </div>
+      )}
       <Highlight {...defaultProps} theme={theme} code={children.trim()} language={language}>
         {({ className, style, tokens, getLineProps, getTokenProps }) => (
-          <pre className={className} style={{ ...style, padding: '20px' }}>
+          <pre className={className} style={{ ...style, padding: '10px' }}>
             {tokens.map((line, i) => (
               <div key={i} {...getLineProps({ line, key: i })}>
                 {line.map((token, key) => (
