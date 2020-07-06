@@ -1,0 +1,43 @@
+---
+layout: 'docs'
+title: 'Avatar'
+description: 'User profile image component'
+---
+
+## Size
+
+There are three sizes, applied by the prop `size`: `large`, `regular` (default) and `small`.
+
+```jsx live
+<Avatar size="large" src="/img/avatar-1.jpg" alt="Judith" />
+<Avatar src="/img/avatar-1.jpg" alt="Judith" />
+<Avatar size="small" src="/img/avatar-1.jpg" alt="Judith" />
+```
+
+## Image
+
+Pass an image to the avatar using the prop `src`.
+
+```jsx live
+<Avatar src="/img/avatar-1.jpg" alt="Judith" />
+```
+
+## Alternate text
+
+Pass an alternate text to the avatar using the prop `alt`.
+
+```jsx live
+<Avatar src="/img/avatar-2.jpg" alt="George" />
+```
+
+## Props overview
+
+| Prop   | Description                            | Type                        | Default   |
+| ------ | -------------------------------------- | --------------------------- | --------- |
+| `size` | define the size of component           | `large`, `regular`, `small` | `regular` |
+| `src`  | `required` define the src of the image | `string`                    |           |
+| `alt`  | `required` alternate text of the image | `string`                    |           |
+
+## Customizing
+
+See [Customization]() to learn how to change `defaultTheme` styles.
