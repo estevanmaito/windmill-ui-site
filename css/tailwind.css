@@ -6,7 +6,7 @@
   h2 {
     @apply text-xl font-semibold mb-4 font-mono relative;
 
-    &:not(:first-of-type) {
+    &:not(:first-child) {
       @apply mt-12;
     }
 
@@ -21,6 +21,10 @@
         @apply outline-none;
       }
     }
+  }
+
+  > p {
+    @apply mb-4;
   }
 
   > h1, > h2, > h3, > h4, > h5, > h6, > p, > span, > table {

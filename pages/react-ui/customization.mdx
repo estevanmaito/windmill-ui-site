@@ -1,0 +1,39 @@
+---
+layout: 'docs'
+title: 'Customization'
+description: 'How to style each component'
+---
+
+Windmill React UI uses a default theme under the hood to provide you a concise, but still flexible styling experience. You can find the entire file [here](https://github.com/estevanmaito/windmill-react-ui/blob/master/src/themes/default.js).
+
+You can reference it in your code importing the default theme `windmill-react-ui/defaultTheme`.
+
+## Customize the default theme
+
+To change a specific style, create a file in your project and add the properties you want to change (see [all available styles](https://github.com/estevanmaito/windmill-react-ui/blob/master/src/themes/default.js)):
+
+```js title=myTheme.js
+export default {
+  button: {
+    size: {
+      regular: 'px-4 py-2 text-sm',
+    },
+  },
+}
+```
+
+Note that you only need to specify the values you are changing within your theme. It will be merged together with the default theme automtically.
+
+Then pass it to the `Windmill` component that is enclosing your root components, using the prop `theme`.
+
+```jsx title=App.js
+import { Windmill } from 'windmill-react-ui'
+import myTheme from './myTheme.js'
+
+ReactDOM.render(
+  <Windmill theme={myTheme}>
+    <App />
+  </Windmill>,
+  document.getElementById('root')
+)
+```

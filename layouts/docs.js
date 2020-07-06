@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Container from '../components/layout/Container'
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
-import pages from '../pages.json'
+import components from '../pages.json'
 
 export default (frontMatter) => {
   return ({ children }) => {
@@ -36,18 +36,41 @@ export default (frontMatter) => {
           <div className="grid grid-cols-12 gap-8 -mt-8">
             <aside className="col-span-2">
               <div className="sticky top-0 pt-8">
-                <span className="block mb-4 font-mono text-sm font-semibold tracking-wide text-gray-500 uppercase">
+                <ul className="mb-8 space-y-2 text-gray-500">
+                  {/* refactor this ASAP! */}
+                  <li
+                    className={`${
+                      router.pathname.split('/')[2] === 'installation' &&
+                      'text-gray-700 font-semibold'
+                    }`}
+                  >
+                    <Link href="../installation">
+                      <a>Installation</a>
+                    </Link>
+                  </li>
+                  <li
+                    className={`${
+                      router.pathname.split('/')[2] === 'customization' &&
+                      'text-gray-700 font-semibold'
+                    }`}
+                  >
+                    <Link href="../customization">
+                      <a>Customization</a>
+                    </Link>
+                  </li>
+                </ul>
+                <span className="block mb-2 font-mono text-sm font-semibold tracking-wide text-gray-500 uppercase">
                   Components
                 </span>
                 <ul className="space-y-2 text-gray-500">
-                  {pages.map((page) => (
+                  {components.map((page) => (
                     <li
                       key={page.url}
                       className={`${
                         router.pathname.split('/')[3] === page.url && 'text-gray-700 font-semibold'
                       }`}
                     >
-                      <Link href={page.url}>
+                      <Link href={`/react-ui/components/${page.url}`}>
                         <a>{page.title}</a>
                       </Link>
                     </li>
