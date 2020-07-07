@@ -91,12 +91,12 @@ export default (frontMatter) => {
             <main className="col-span-8 pt-8 markdown">{children}</main>
             <aside className="col-span-2">
               <div className="sticky top-0 pt-8">
-                <span className="block mb-4 font-mono text-sm font-semibold tracking-wide text-gray-500 uppercase">
+                <span className="block mb-2 font-mono text-sm font-semibold tracking-wide text-gray-500 uppercase">
                   On this page
                 </span>
                 <ul className="space-y-2 text-sm text-gray-600">
                   {frontMatter.innerLinks.map((link) => (
-                    <li key={link.url}>
+                    <li className="leading-5" key={link.url}>
                       <a href={link.url}>{link.title}</a>
                     </li>
                   ))}
