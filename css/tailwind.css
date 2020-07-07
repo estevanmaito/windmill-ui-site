@@ -48,8 +48,12 @@
     @apply text-gray-700;
   }
 
-  p > a, > a {
+  p > a, > a, table a {
     @apply border-b border-primary;
+
+    > code {
+      @apply text-sm bg-gray-100 py-px px-2 border-b border-primary;
+    }
   }
 
   hr {

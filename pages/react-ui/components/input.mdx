@@ -1,0 +1,107 @@
+---
+layout: 'docs'
+title: 'Input'
+description: 'Form related inputs'
+---
+
+## Base
+
+The default base `input` doesn't need any special prop, but all attributes that you would usually use in _normal_ HTML are available here too. Note that if you're not using a [`Label`](label) component (not recommended), you should use an `aria-label` attribute to give screen readers a label.
+
+```jsx live
+<Input />
+<Input aria-label="Bad" placeholder="Prefer a Label" />
+<Label>
+  <span>Better to use a label</span>
+  <Input className="mt-1" />
+</Label>
+```
+
+## Disabled
+
+The `disabled` prop applies disabled styles to the `input`.
+
+```jsx live
+<Input disabled />
+```
+
+## Valid
+
+The `valid` prop applies valid styles to the `input`.
+
+```jsx live
+<Input valid />
+```
+
+## Invalid
+
+Give a value of `false` to the `valid` prop to apply invalid styles to the `input`.
+
+```jsx live
+<Input valid={false} />
+```
+
+## Helper text
+
+See [`HelperText`](helpertext) for more. Use `HelperText` to give more information about the related `input`.
+
+```jsx live
+<Label>
+  <Input type="text" />
+  <HelperText>Password should have more than 6 characters</HelperText>
+</Label>
+<Label>
+  <Input type="text" valid />
+  <HelperText valid>Your password is strong</HelperText>
+</Label>
+<Label>
+  <Input type="text" valid={false} />
+  <HelperText valid={false}>Provide a valid email</HelperText>
+</Label>
+```
+
+## Radio
+
+Use `radio` as the value of `type` attribute to create a `radio` styled `input`. Note that you need to provide an `onChange` event handler for `checked` elements. If you don't, they will render a read-only field.
+
+See [`Label`](label) for more on its usage with radios. \*`div` used just for the example.
+
+```jsx live
+<Input type="radio" />
+<Input type="radio" checked />
+<div>
+<Label radio>
+  <Input type="radio" />
+  <span className="ml-2">Go to Label to read more</span>
+</Label>
+</div>
+```
+
+## Checkbox
+
+Use `checkbox` as the value of `type` attribute to create a `checkbox` styled `input`. Note that you need to provide an `onChange` event handler for `checked` elements. If you don't, they will render a read-only field.
+
+See [`Label`](label) for more on its usage with checkboxes. \*`div` used just for the example.
+
+```jsx live
+<Input type="checkbox" />
+<Input type="checkbox" checked />
+<div>
+<Label check>
+  <Input type="checkbox" />
+  <span className="ml-2">Go to Label to read more</span>
+</Label>
+</div>
+```
+
+## Props overview
+
+| Prop       | Description                                                               | Type      | Default |
+| ---------- | ------------------------------------------------------------------------- | --------- | ------- |
+| `type`     | define the type of the `input`. See [`Textarea`](textarea) for textareas. | `string`  | `text`  |
+| `disabled` | apply disabled styles to the `input`                                      | `boolean` |         |
+| `valid`    | apply valid or invalid styles to the `input`                              | `boolean` |         |
+
+## Customizing
+
+See [Customization](../customization) to learn how to change `defaultTheme` styles.
