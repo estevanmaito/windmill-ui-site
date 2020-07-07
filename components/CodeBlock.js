@@ -55,7 +55,7 @@ export default ({ children, className, live, render, title }) => {
   return (
     <div className="overflow-hidden text-sm">
       {title && (
-        <div className="px-2 py-1 bg-gray-100 border-t border-l border-r">
+        <div className="flex px-2 py-1 bg-gray-100 border-t border-l border-r">
           <span className="font-mono text-xs text-gray-600">{title}</span>
         </div>
       )}
