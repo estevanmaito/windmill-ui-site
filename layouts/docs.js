@@ -58,6 +58,16 @@ export default (frontMatter) => {
                       <a>Customization</a>
                     </Link>
                   </li>
+                  <li
+                    className={`${
+                      router.pathname.split('/')[2] === 'dark-theme' &&
+                      'text-gray-700 font-semibold'
+                    }`}
+                  >
+                    <Link href="/react-ui/dark-theme">
+                      <a>Dark theme</a>
+                    </Link>
+                  </li>
                 </ul>
                 <span className="block mb-2 font-mono text-sm font-semibold tracking-wide text-gray-500 uppercase">
                   Components

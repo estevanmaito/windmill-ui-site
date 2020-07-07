@@ -1,0 +1,62 @@
+---
+layout: 'docs'
+title: 'Dark theme'
+description: 'Using dark theme features'
+---
+
+Windmill, when used with the enclosing `Windmill` component, offers out of the box the following features:
+
+- Theme toggler to switch between themes
+- `prefers-color-scheme` support to automatically change to dark theme if user prefers 'dark'
+- `localStorage` storing for user preferences so it's consistent on every visit/load
+
+## Add a toggle theme button
+
+In Windmill, multi theme is part of the core, so to make it easier for you to change between styles, it exposes a way for you to toggle and to read the current theme through React's Context API, as long as you have `Windmill` enclosing your root component.
+
+Simply import `WindmillContext` and destructure `mode` (current selected mode) and `toggleMode` (toggle between light and dark).
+
+```jsx title=SomeComponent.js
+import React, { useContext } from 'react'
+import { Button, WindmillContext } from 'windmill-react-ui'
+
+function SomeComponent() {
+  const { mode, toggleMode } = useContext(WindmillContext)
+
+  return (
+    <Button onClick={toggleMode}>Toggle theme</Button>
+    <p>Current theme is: {mode}</p>
+  )
+}
+
+export default SomeComponent
+```
+
+## Dark as default
+
+The default theme is light, but if you want to make the dark theme standard, add the prop `dark` to your `Windmill` component,
+
+```jsx title=App.js
+import { Windmill } from 'windmill-react-ui'
+
+ReactDOM.render(
+  <Windmill dark>
+    <App />
+  </Windmill>,
+  document.getElementById('root')
+)
+```
+
+## Dark theme in your own project
+
+Tailwind does not support dark themes yet (last version `1.4.6`), but it is possible to use in this project thanks to [tailwindcss-multi-theme](https://github.com/estevanmaito/tailwindcss-multi-theme/blob/master/README.md#-install).
+
+It extends Tailwind styles by adding `dark:` in front of every utility (you can read more in the simple docs in the link above), and is available for you to use by the plugin you added in [Installation](installation), as long as you are using the `Windmill` component to encapsulate your root component.
+
+### Recommendations
+
+Windmill UI uses a modified color palette, based on Tailwind UI. The biggest difference you will notice is that the original Tailwind CSS gray is now under `cool-gray` like `bg-cool-gray-500`, while the actual `gray` is a little bit darker from `700` on. You may think that it looks almost black or that they are almost the same, and for text, it may be hard to distinguish between them.
+
+The difference is that when you are coloring large parts of the screen (eg. a dark theme with large dark parts) the original palette have too much contrast, while the colors we use here fit better for this kind of usage.
+
+Recommendation #1: Think of your design as if they were layers: elements closer to the user should use a lighter gray while farther ones should use darker shades. [This tweet](https://twitter.com/steveschoger/status/1151160261170126850/photo/1) from Steve Schoger shows it better than words.
