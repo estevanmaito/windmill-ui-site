@@ -1,0 +1,94 @@
+---
+layout: 'docs'
+title: 'Modal'
+description: 'Pop up dialog'
+---
+
+import ModalPage from '../../../components/ModalExample'
+
+Windmill modals are completely accessible. As soon as you open it, you'll notice that the close button is already focused. This is because the focus is traped inside the modal, so you can navigate with keyboard without the focus leaving the dialog.
+
+Once it is closed, through a click or `Esc` key press, focus is restored to the element that opened the modal.
+
+Also, notice that the layout is entirely changed when it is viewed on a small screen, to make it the most accessible it possibly can be to user's thumbs.
+
+## Basics
+
+A modal is composed of four components: a root `Modal` that receives two properties, listed below, `ModalHeader`, `ModalBody` and `ModalFooter`.
+
+Take a look at this compressed example.
+
+<ModalPage />
+
+```jsx
+<Modal isOpen={isModalOpen} onClose={closeModal}>
+  <ModalHeader>Modal header</ModalHeader>
+  <ModalBody>
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum et eligendi repudiandae
+    voluptatem tempore!
+  </ModalBody>
+  <ModalFooter>
+    <Button className="w-full sm:w-auto" layout="outline" onClick={closeModal}>
+      Cancel
+    </Button>
+    <Button className="w-full sm:w-auto">Accept</Button>
+  </ModalFooter>
+</Modal>
+```
+
+## Complete example
+
+This is what a complete example component looks like, with handlers, state, etc.
+
+```jsx title=ModalPage.js
+import React, { useState } from 'react'
+
+import { Modal, ModalHeader, ModalBody, ModalFooter, Button } from 'windmill-react-ui'
+
+function ModalPage() {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
+  function openModal() {
+    setIsModalOpen(true)
+  }
+
+  function closeModal() {
+    setIsModalOpen(false)
+  }
+
+  return (
+    <>
+      <div>
+        <Button onClick={openModal}>Open modal</Button>
+      </div>
+
+      <Modal isOpen={isModalOpen} onClose={closeModal}>
+        <ModalHeader>Modal header</ModalHeader>
+        <ModalBody>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum et eligendi repudiandae
+          voluptatem tempore!
+        </ModalBody>
+        <ModalFooter>
+          <Button className="w-full sm:w-auto" layout="outline" onClick={closeModal}>
+            Cancel
+          </Button>
+          <Button className="w-full sm:w-auto">Accept</Button>
+        </ModalFooter>
+      </Modal>
+    </>
+  )
+}
+
+export default ModalPage
+```
+
+## Props overview
+
+| Prop      | Description                      | Type       | Default |
+| --------- | -------------------------------- | ---------- | ------- |
+| `isOpen`  | define if the modal is open      | `boolean`  | `false` |
+| `onClose` | function to handle modal closing | `function` |         |
+
+## Customizing
+
+See [Customization](../customization) to learn how to change `defaultTheme` styles.
