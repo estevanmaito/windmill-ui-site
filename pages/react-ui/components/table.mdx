@@ -1,0 +1,153 @@
+---
+layout: 'docs'
+title: 'Table'
+description: 'Data table'
+---
+
+## Complete example
+
+I think you'll understand better the following sections with a complete, contextualized example.
+
+```jsx live
+<TableContainer>
+  <Table>
+    <TableHeader>
+      <TableRow>
+        <TableCell>Client</TableCell>
+        <TableCell>Amount</TableCell>
+        <TableCell>Status</TableCell>
+      </TableRow>
+    </TableHeader>
+    <TableBody>
+      <TableRow>
+        <TableCell>
+          <div className="flex items-center text-sm">
+            <Avatar src="/img/avatar-1.jpg" alt="Judith" />
+            <span className="font-semibold ml-2">Judith Ipsum</span>
+          </div>
+        </TableCell>
+        <TableCell>
+          <span className="text-sm">$ 534.87</span>
+        </TableCell>
+        <TableCell>
+          <Badge type="success">success</Badge>
+        </TableCell>
+      </TableRow>
+    </TableBody>
+  </Table>
+  <TableFooter>
+    <Pagination totalResults={10} resultsPerPage={4} onChange={() => {}} label="Table navigation" />
+  </TableFooter>
+</TableContainer>
+```
+
+## Table container
+
+The `TableContainer` is responsible for containing the entire table inside borders and keeps it responsible. In smaller screens, the table will gently show a horizontal scroll.
+
+```jsx live
+<TableContainer>Table content goes here</TableContainer>
+```
+
+## Table
+
+The `Table` is exaclty the `table` element, and you won't find it's styles in the `defaultTheme` because they are just the minimum necessary for it to work well inside the container.
+
+```jsx live
+<TableContainer>
+  <Table>Table always sits inside the container</Table>
+</TableContainer>
+```
+
+## Table header
+
+The `TableHeader` is the `thead` element with specific styles added to create a unique header for tables. This is where you place column titles.
+
+```jsx live
+<TableContainer>
+  <Table>
+    <TableHeader>
+      <TableRow>
+        <TableCell>Name</TableCell>
+        <TableCell>Address</TableCell>
+      </TableRow>
+    </TableHeader>
+  </Table>
+</TableContainer>
+```
+
+## Table body
+
+The `TableBody` is the `tbody` element with specific styles added to create unique table styles, like the division between rows. This is where you place general table data rows.
+
+```jsx live
+<TableContainer>
+  <Table>
+    <TableBody>
+      <TableRow>
+        <TableCell>SpongeBob</TableCell>
+        <TableCell>124 Conch Street</TableCell>
+      </TableRow>
+    </TableBody>
+  </Table>
+</TableContainer>
+```
+
+## Table row
+
+The `TableRow` maps to the `tr` element and just apply minimum text styles. This is where you place table cells.
+
+```jsx live
+<TableContainer>
+  <Table>
+    <TableBody>
+      <TableRow>
+        <TableCell>SpongeBob</TableCell>
+        <TableCell>124 Conch Street</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>Patrick</TableCell>
+        <TableCell>120 Conch Street</TableCell>
+      </TableRow>
+    </TableBody>
+  </Table>
+</TableContainer>
+```
+
+## Table cell
+
+The `TableCell` is responsible for the `td` element and also just apply bare minimum styles. This is the smaller piece of a table and you should put all your data inside it.
+
+```jsx live
+<TableContainer>
+  <Table>
+    <TableBody>
+      <TableRow>
+        <TableCell>SpongeBob</TableCell>
+        <TableCell>124 Conch Street</TableCell>
+      </TableRow>
+    </TableBody>
+  </Table>
+</TableContainer>
+```
+
+## Table footer
+
+The `TableFooter` with it's name may trick some into placing it inside the `Table` component but, for flexibility, it sits **outside** of the `Table` but still **inside** of the `TableContainer`.
+
+In the vast majority of the cases where this component is needed, is to offer a `Pagination` component for the table.
+
+Read [`Pagination`](pagination) docs for more.
+
+```jsx live
+<TableContainer>
+  <Table></Table>
+  <TableFooter>
+    <Pagination totalResults={1} resultsPerPage={1} onChange={() => {}} label="Table navigation" />
+  </TableFooter>
+</TableContainer>
+```
+
+## Customizing
+
+See [Customization](../customization) to learn how to change `defaultTheme` styles.
