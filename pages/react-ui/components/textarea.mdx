@@ -1,0 +1,51 @@
+---
+layout: 'docs'
+title: 'Textarea'
+description: 'Larger text input'
+---
+
+## Base
+
+The default base `textarea` doesn't need any special prop, but all attributes that you would usually use in _normal_ HTML are available here too. Note that if you're not using a [`Label`](label) component (not recommended), you should use an `aria-label` attribute to give screen readers a label.
+
+```jsx live
+<Label>
+  <span>Message</span>
+  <Textarea className="mt-1" rows="3" placeholder="Enter some long form content." />
+</Label>
+```
+
+## Disabled
+
+The `disabled` prop applies disabled styles to the `textarea`.
+
+```jsx live
+<Textarea disabled rows="3" placeholder="Enter some long form content." />
+```
+
+## Valid
+
+The `valid` prop applies valid styles to the `textarea`.
+
+```jsx live
+<Textarea valid rows="3" placeholder="Enter some long form content." />
+```
+
+## Invalid
+
+Give a value of `false` to the `valid` prop to apply invalid styles to the `textarea`.
+
+```jsx live
+<Textarea valid={false} rows="3" placeholder="Enter some long form content." />
+```
+
+## Props overview
+
+| Prop       | Description                                     | Type      | Default |
+| ---------- | ----------------------------------------------- | --------- | ------- |
+| `disabled` | apply disabled styles to the `textarea`         | `boolean` |         |
+| `valid`    | apply valid or invalid styles to the `textarea` | `boolean` |         |
+
+## Customizing
+
+See [Customization](../customization) to learn how to change `defaultTheme` styles.
