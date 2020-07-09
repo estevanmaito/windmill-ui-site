@@ -1,0 +1,63 @@
+---
+layout: 'docs'
+title: 'Select'
+description: 'Select input'
+---
+
+## Base
+
+The default base `select` doesn't need any special prop, but all attributes that you would usually use in _normal_ HTML are available here too. Note that if you're not using a [`Label`](label) component (not recommended), you should use an `aria-label` attribute to give screen readers a label.
+
+```jsx live
+<Label>
+  <span>Requested Limit</span>
+  <Select className="mt-1">
+    <option>$1,000</option>
+    <option>$5,000</option>
+  </Select>
+</Label>
+```
+
+## Disabled
+
+The `disabled` prop applies disabled styles to the `select`.
+
+```jsx live
+<Select disabled>
+  <option>$1,000</option>
+  <option>$5,000</option>
+</Select>
+```
+
+## Valid
+
+The `valid` prop applies valid styles to the `select`.
+
+```jsx live
+<Select valid>
+  <option>$1,000</option>
+  <option>$5,000</option>
+</Select>
+```
+
+## Invalid
+
+Give a value of `false` to the `valid` prop to apply invalid styles to the `select`.
+
+```jsx live
+<Select valid={false}>
+  <option>$1,000</option>
+  <option>$5,000</option>
+</Select>
+```
+
+## Props overview
+
+| Prop       | Description                                   | Type      | Default |
+| ---------- | --------------------------------------------- | --------- | ------- |
+| `disabled` | apply disabled styles to the `select`         | `boolean` |         |
+| `valid`    | apply valid or invalid styles to the `select` | `boolean` |         |
+
+## Customizing
+
+See [Customization](../customization) to learn how to change `defaultTheme` styles.
