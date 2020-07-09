@@ -6,7 +6,7 @@ description: 'Clicable component'
 
 ## Size
 
-There are four sizes, applied by the prop `size`: `larger`, `large`, `regular` (default), `small` and `icon`.
+There are four sizes, applied by the prop `size`: `larger`, `large`, `regular` (default) and `small`.
 
 ```jsx live
 <Button size="larger">Larger</Button>
@@ -23,6 +23,19 @@ There are three styles, applied by the prop `layout`: `primary` (default), `outl
 <Button>Primary</Button>
 <Button layout="outline">Outline</Button>
 <Button layout="link">Link</Button>
+```
+
+## Icon
+
+There are three icon positions: `icon` applies an icon image centered in a button or, if it has children, has the same behavior as `iconLeft`. The other two are `iconLeft` and `iconRight`, perfect to use with text.
+
+```jsx live
+<Button iconRight={HeartIcon}>Icon right</Button>
+<Button iconLeft={HeartIcon}>Icon left</Button>
+<Button iconLeft={HeartIcon} iconRight={EditIcon}>Two icons</Button>
+<Button icon={HeartIcon} />
+<Button icon={HeartIcon} layout="link" />
+<Button icon={HeartIcon} layout="outline" />
 ```
 
 ## Disabled
@@ -57,13 +70,16 @@ The `tag` is responsible for rendering a specific HTML element as a `Button`, an
 
 ## Props overview
 
-| Prop       | Description                    | Type                                          | Default   |
-| ---------- | ------------------------------ | --------------------------------------------- | --------- |
-| `size`     | define the size of component   | `larger`, `large`, `regular`, `small`, `icon` | `regular` |
-| `layout`   | define the layout of component | `primary`, `outline`, `link`                  | `primary` |
-| `disabled` | disable state of button        | `boolean`                                     | `false`   |
-| `block`    | expand full width              | `boolean`                                     | `false`   |
-| `tag`      | define the element tag         | `string`, `ReactNode`                         | `button`  |
+| Prop        | Description                            | Type                                          | Default   |
+| ----------- | -------------------------------------- | --------------------------------------------- | --------- |
+| `size`      | define the size of component           | `larger`, `large`, `regular`, `small`, `icon` | `regular` |
+| `layout`    | define the layout of component         | `primary`, `outline`, `link`                  | `primary` |
+| `icon`      | add an icon to the button              | `ReactNode`                                   |           |
+| `iconLeft`  | add an icon to the left of the button  | `ReactNode`                                   |           |
+| `iconRight` | add an icon to the right of the button | `ReactNode`                                   |           |
+| `disabled`  | disable state of button                | `boolean`                                     | `false`   |
+| `block`     | expand full width                      | `boolean`                                     | `false`   |
+| `tag`       | define the element tag                 | `string`, `ReactNode`                         | `button`  |
 
 ## Customizing
 

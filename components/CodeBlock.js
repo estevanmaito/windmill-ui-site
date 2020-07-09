@@ -3,6 +3,8 @@ import Highlight, { defaultProps } from 'prism-react-renderer'
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live'
 import { mdx } from '@mdx-js/react'
 import * as Windmill from 'windmill-react-ui'
+import HeartIcon from '../icons/heart.svg'
+import EditIcon from '../icons/edit.svg'
 import theme from '../prismTheme'
 
 export default ({ children, className, live, render, title }) => {
@@ -13,7 +15,7 @@ export default ({ children, className, live, render, title }) => {
         <LiveProvider
           code={children.trim()}
           transformCode={(code) => '/** @jsx mdx */' + `<>${code}</>`}
-          scope={{ mdx, ...Windmill }}
+          scope={{ mdx, ...Windmill, HeartIcon, EditIcon }}
           theme={theme}
         >
           <LivePreview

@@ -1,4 +1,6 @@
 const withMdxEnhanced = require('next-mdx-enhanced')
+const withReactSvg = require('next-react-svg')
+const path = require('path')
 
 module.exports = withMdxEnhanced({
   layoutPath: 'layouts',
@@ -22,4 +24,11 @@ module.exports = withMdxEnhanced({
     },
     phase: 'both',
   },
-})()
+})(
+  withReactSvg({
+    include: path.resolve(__dirname, 'icons'),
+    webpack(config, options) {
+      return config
+    },
+  })
+)
