@@ -1,0 +1,39 @@
+---
+layout: 'docs'
+title: 'Helper Text'
+description: 'Additional information text'
+---
+
+## Base
+
+You should use `HelperText` to give more information alongside form fields. The default base `HelperText` doesn't need any special prop.
+
+```jsx live previewClassName=pb-4
+<HelperText>Password should have more than 6 characters</HelperText>
+```
+
+## Valid
+
+The `valid` prop applies valid styles to the `HelperText`.
+
+```jsx live previewClassName=pb-4
+<HelperText valid>Your password is strong</HelperText>
+```
+
+## Invalid
+
+Give a value of `false` to the `valid` prop to apply invalid styles to the `HelperText`.
+
+```jsx live previewClassName=pb-4
+<HelperText valid={false}>Provide a valid email</HelperText>
+```
+
+## Props overview
+
+| Prop    | Description                                  | Type      | Default |
+| ------- | -------------------------------------------- | --------- | ------- |
+| `valid` | apply valid or invalid styles to the `input` | `boolean` |         |
+
+## Customizing
+
+See [Customization](../customization) to learn how to change `defaultTheme` styles.
