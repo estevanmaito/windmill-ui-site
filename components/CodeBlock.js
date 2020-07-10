@@ -7,7 +7,7 @@ import HeartIcon from '../icons/heart.svg'
 import EditIcon from '../icons/edit.svg'
 import theme from '../prismTheme'
 
-export default ({ children, className, live, render, title }) => {
+export default ({ children, className, previewClassName, live, render, title }) => {
   const language = className.replace(/language-/, '')
   if (live) {
     return (
@@ -19,7 +19,7 @@ export default ({ children, className, live, render, title }) => {
           theme={theme}
         >
           <LivePreview
-            className="pt-4 pl-4 pr-4 border-t border-l border-r font-inter"
+            className={`pt-4 pl-4 pr-4 border-t border-l border-r font-inter ${previewClassName}`}
             id="__live-preview"
           />
           <div
