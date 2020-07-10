@@ -1,0 +1,62 @@
+---
+layout: 'docs'
+title: 'Label'
+description: 'Caption for form fields'
+---
+
+## Base
+
+The default base `Label` doesn't need any special prop and should always enclose all elements that it describes.
+
+```jsx live
+<Label>
+  <span>Name</span>
+  <Input className="mt-1" />
+</Label>
+```
+
+## Check/radio
+
+The `check` and `radio` props apply the respective styles to the `input`, making them look beautiful. They are interchangeable, so you could use only `radio` or only `check`, but I would recommend that you use the one that better describes its use.
+
+```jsx live
+<Label radio>
+  <Input type="radio" />
+  <span className="ml-2">Radio label</span>
+</Label>
+<Label check>
+  <Input type="checkbox" />
+  <span className="ml-2">Checkbox label</span>
+</Label>
+```
+
+## Disabled
+
+The `disabled` prop applies disabled styles to the `label`. You still need to handle the disabled state individually for the inputs. See example below.
+
+```jsx live
+<Label radio disabled>
+  <Input type="radio" />
+  <span className="ml-2">Disabled radio label</span>
+</Label>
+<Label check disabled>
+  <Input type="checkbox" />
+  <span className="ml-2">Disabled checkbox label</span>
+</Label>
+<Label disabled>
+  <span>Name</span>
+  <Input className="mt-1" />
+</Label>
+```
+
+## Props overview
+
+| Prop       | Description                                            | Type      | Default |
+| ---------- | ------------------------------------------------------ | --------- | ------- |
+| `check`    | apply layout styles to the labels of `checkbox` inputs | `boolean` |         |
+| `radio`    | apply layout styles to the labels of `radio` inputs    | `boolean` |         |
+| `disabled` | apply disabled styles to the `label`                   | `boolean` |         |
+
+## Customizing
+
+See [Customization](../customization) to learn how to change `defaultTheme` styles.
