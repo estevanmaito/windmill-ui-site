@@ -4,7 +4,9 @@ title: 'Dark theme'
 description: 'Using dark theme features'
 ---
 
-Windmill, when used with the enclosing `Windmill` component, offers out of the box the following features:
+import Alert from '../../components/Alert'
+
+Windmill, when used with the prop `usePreferences` on the enclosing `Windmill` component, offers out of the box the following features:
 
 - Theme toggler to switch between themes
 - `prefers-color-scheme` support to automatically change to dark theme if user prefers 'dark'
@@ -12,9 +14,11 @@ Windmill, when used with the enclosing `Windmill` component, offers out of the b
 
 ## Add a toggle theme button
 
-In Windmill, multi theme is part of the core, so to make it easier for you to change between styles, it exposes a way for you to toggle and to read the current theme through React's Context API, as long as you have `Windmill` enclosing your root component.
+In Windmill, multi theme is part of the core, so to make it easier for you to change between styles, it exposes a way for you to toggle and to read the current theme through React's Context API, as long as you have `Windmill` enclosing your root component with the `usePreferences` prop.
 
 Simply import `WindmillContext` and destructure `mode` (current selected mode) and `toggleMode` (toggle between light and dark).
+
+<Alert>It will only work if you use the usePreferences prop on the root Windmill component.</Alert>
 
 ```jsx title=SomeComponent.js
 import React, { useContext } from 'react'
