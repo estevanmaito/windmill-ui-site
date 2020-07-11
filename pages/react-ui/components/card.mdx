@@ -1,0 +1,75 @@
+---
+layout: 'docs'
+title: 'Card'
+description: 'Rectangular panel'
+---
+
+## Complete example
+
+I think you'll understand better the following sections with a complete, contextualized example.
+
+```jsx live
+<Card>
+  <CardBody>
+    <p className="mb-4 font-semibold text-gray-600 dark:text-gray-300">Revenue</p>
+    <p className="text-gray-600 dark:text-gray-400">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga, cum commodi a omnis numquam
+      quod? Totam exercitationem quos hic ipsam at qui cum numquam, sed amet ratione! Ratione, nihil
+      dolorum.
+    </p>
+  </CardBody>
+</Card>
+```
+
+## Card
+
+The `Card` component defines some very basic styles, like background color and borders.
+
+```jsx live
+<Card>Lorem ipsum dolor sit amet</Card>
+```
+
+## Colored
+
+The `Card` component background colors can be overwritten by using the prop `colored` and setting new colors using a `className`.
+
+```jsx live
+<Card colored className="bg-purple-600">
+  <CardBody>
+    <p className="mb-4 font-semibold text-white">Revenue</p>
+    <p className="text-white">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga, cum commodi a omnis numquam
+      quod? Totam exercitationem quos hic ipsam at qui cum numquam, sed amet ratione! Ratione, nihil
+      dolorum.
+    </p>
+  </CardBody>
+</Card>
+```
+
+## Card body
+
+The `CardBody` component also define some very basic styles (literally, it's just a `p-4`) and is required for a nice looking card. The benefit of not applying too much styling is that you get a very flexible component.
+
+```jsx live
+<Card className="flex h-48">
+  <img className="object-cover w-1/3" src="/img/forest.jpeg" />
+  <CardBody>
+    <p className="mb-4 font-semibold text-gray-600 dark:text-gray-300">Revenue</p>
+    <p className="text-gray-600 dark:text-gray-400">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga, cum commodi a omnis numquam
+      quod? Totam exercitationem quos hic ipsam at qui cum numquam, sed amet ratione! Ratione, nihil
+      dolorum.
+    </p>
+  </CardBody>
+</Card>
+```
+
+## Props overview
+
+| Prop      | Description                          | Type      | Default |
+| --------- | ------------------------------------ | --------- | ------- |
+| `colored` | remove the default background colors | `boolean` |         |
+
+## Customizing
+
+See [Customization](../customization) to learn how to change `defaultTheme` styles.
