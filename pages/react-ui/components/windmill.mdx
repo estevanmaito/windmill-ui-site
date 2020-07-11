@@ -1,0 +1,71 @@
+---
+layout: 'docs'
+title: 'Windmill'
+description: 'Root component'
+---
+
+import Alert from '../../../components/Alert'
+
+This page condensates information about the `Windmill` component that you may have already seen in [Dark theme](dark-theme), [Installation](installation) and [Customization](customization), but gives more details.
+
+## Base
+
+The default `Windmill` component must encapsulate your root component and it doesn't apply any changes by default.
+
+<Alert>This is only recommended if you just want to provide a single light theme.</Alert>
+
+```jsx title=App.js
+<Windmill>
+  <App />
+</Windmill>
+```
+
+## Use preferences
+
+The `usePreferences` prop enables these features:
+
+- Theme toggler to switch between themes ([read more](/react-ui/dark-theme#add-a-toggle-theme-button) about it)
+- `prefers-color-scheme` support to automatically change to dark theme if user prefers 'dark'
+- `localStorage` storing for user preferences so it's consistent on every visit/load
+
+All of it taken care with a single prop...
+
+```jsx title=App.js
+<Windmill usePreferences>
+  <App />
+</Windmill>
+```
+
+## Dark as default
+
+The `dark` prop turns the dark theme the default.
+
+```jsx title=App.js
+<Windmill dark>
+  <App />
+</Windmill>
+```
+
+## Custom theme
+
+You can merge a custom theme (that is, you don't need to create a complete theme, just changing little bits is enough) using the `theme` prop.
+
+Learn how to do it on [Customization](/react-ui/customization).
+
+```jsx title=App.js
+<Windmill theme={myTheme}>
+  <App />
+</Windmill>
+```
+
+## Props overview
+
+| Prop             | Description                                        | Type      | Default |
+| ---------------- | -------------------------------------------------- | --------- | ------- |
+| `usePreferences` | apply user theme preferences and provide utilities | `boolean` | `false` |
+| `dark`           | define dark theme as default                       | `boolean` |         |
+| `theme`          | theme to merge with `defaultTheme`                 | `object`  |         |
+
+## Customizing
+
+See [Customization](../customization) to learn how to change `defaultTheme` styles.

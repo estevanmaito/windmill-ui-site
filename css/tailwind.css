@@ -32,6 +32,7 @@
   }
 
   > ul {
+    @apply mb-4;
     li {
       @apply pl-2 my-2;
 
@@ -46,7 +47,7 @@
     @apply text-gray-700;
   }
 
-  p > a, > a, table a {
+  p > a, > a, table a, li > a {
     @apply border-b border-primary;
 
     > code {
