@@ -1,0 +1,141 @@
+---
+layout: 'docs'
+title: 'Dropdown'
+description: 'Generic reusable dropdown'
+---
+
+import DropdownExample from '../../../components/DropdownExample'
+import Alert from '../../../components/Alert'
+
+Windmill dropdowns are completely accessible. As soon as you open it, you'll notice that the close first element of the dropdown is already focused. This is because the focus is traped inside the dropdown, so you can navigate with keyboard without the focus leaving the dialog.
+
+Once it is closed, through a click or `Esc` key press, focus is restored to the element that opened the dropdown.
+
+## Basics
+
+I think you'll understand better the following sections with a complete, contextualized example.
+
+<DropdownExample />
+
+```jsx
+<Dropdown isOpen={true} onClose={() => {}}>
+  <DropdownItem tag="a" href="#" className="justify-between">
+    <span>Messages</span>
+    <Badge type="danger">13</Badge>
+  </DropdownItem>
+  <DropdownItem onClick={() => alert('Alerts!')}>
+    <span>Alerts</span>
+  </DropdownItem>
+</Dropdown>
+```
+
+## Align
+
+There are two alignment options, applied by the `align` prop: `left` (default) and `right`.
+
+It defines to which side the dropdown will be rendered. Note that it is `absolute` positioned to the parent element, so the parent must be `relative` positioned.
+
+```jsx
+<Dropdown align="right" isOpen={true} onClose={() => {}}>
+  <DropdownItem tag="a" href="#" className="justify-between">
+    <span>Messages</span>
+    <Badge type="danger">13</Badge>
+  </DropdownItem>
+  <DropdownItem onClick={() => alert('Alerts!')}>
+    <span>Alerts</span>
+  </DropdownItem>
+</Dropdown>
+```
+
+## isOpen
+
+The `isOpen` prop defines if the dropdown is visible.
+
+```jsx
+<Dropdown isOpen={true} onClose={() => {}}>
+  ...
+</Dropdown>
+```
+
+## onClose
+
+The `onClose` prop is responsible for the function that will change the value of `isOpen`, closing the dropdown.
+
+<Alert type="warning">
+  It is important that the close function sets isOpen to false, and not just toggle the value, to
+  avoid opening the dropdown using Esc. See complete example below.
+</Alert>
+
+```jsx
+<Dropdown isOpen={true} onClose={() => {}}>
+  ...
+</Dropdown>
+```
+
+## DropdownItem
+
+The `DropdownItem` is in fact a `Button`, styled differently and you're limited to the `tag` prop.
+
+Note that every other prop, that is not part of the `Button` API exclusively, like `onClick` (things you would normally do in React) are still available.
+
+Read more about [Buttons](button).
+
+```jsx
+<DropdownItem tag="a" href="#" className="justify-between">
+  <span>Messages</span>
+  <Badge type="danger">13</Badge>
+</DropdownItem>
+<DropdownItem onClick={() => alert('Alerts!')}>
+  <span>Alerts</span>
+</DropdownItem>
+```
+
+## Complete example
+
+This is what a complete example component looks like, with handlers, state, etc.
+
+```jsx title=DropdownExample.js
+import React, { useState } from 'react'
+
+import { Dropdown, DropdownItem, Badge, Button } from 'windmill-react-ui'
+
+function DropdownExample() {
+  const [isOpen, setIsOpen] = useState(false)
+
+  function toggleDropdown() {
+    setIsOpen(!isOpen)
+  }
+
+  return (
+    <div className="relative">
+      <Button onClick={toggleDropdown} aria-label="Notifications" aria-haspopup="true">
+        Open dropdown
+      </Button>
+
+      <Dropdown isOpen={isOpen} onClose={() => setIsOpen(false)}>
+        <DropdownItem tag="a" href="#" className="justify-between">
+          <span>Messages</span>
+          <Badge type="danger">13</Badge>
+        </DropdownItem>
+        <DropdownItem onClick={() => alert('Alerts!')}>
+          <span>Alerts</span>
+        </DropdownItem>
+      </Dropdown>
+    </div>
+  )
+}
+
+export default DropdownExample
+```
+
+## Props overview
+
+| Prop      | Description                                                   | Type            | Default |
+| --------- | ------------------------------------------------------------- | --------------- | ------- |
+| `align`   | define the alignment of the dropdown, relative to it's parent | `left`, `right` | `left`  |
+| `isOpen`  | `required` define if the dropdown is visible                  | `boolean`       |         |
+| `onClose` | `required` closes the dropdown                                | `function`      |         |
+
+## Customizing
+
+See [Customization](../customization) to learn how to change `defaultTheme` styles.
