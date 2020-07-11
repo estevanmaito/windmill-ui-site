@@ -1,0 +1,49 @@
+---
+layout: 'docs'
+title: 'Pagination'
+description: 'Divide data into pages'
+---
+
+## Base
+
+The base `Pagination` component needs four _required_ props: `totalResults`, `resultsPerPage`, `onChange` and `label`.
+
+<!-- prettier-ignore-start -->
+```jsx live
+<Pagination
+  totalResults={120}
+  resultsPerPage={10}
+  onChange={() => {}}
+  label="Page navigation"
+/>
+```
+<!-- prettier-ignore-end -->
+
+## Total results
+
+The `Pagination` component know how many results to render using the `totalResults` prop.
+
+## Results per page
+
+The `resultsPerPage` defines how many results will be shown and how many pages should be created.
+
+## onChange
+
+The `onChange` prop gives you the ability to decide what actions should be done when the event of a page change occurs.
+
+## Label
+
+The `label` prop maps to an `aria-label` attribute inside the `Pagination` component, so screen readers can announce a descriptive message that explains what are you trying to paginate. Is this a table, posts, images, etc. pagination?
+
+## Props overview
+
+| Prop             | Description                                                  | Type       | Default |
+| ---------------- | ------------------------------------------------------------ | ---------- | ------- |
+| `totalResults`   | `required` define the length of the data                     | `number`   |         |
+| `resultsPerPage` | `required` define how many results are shown in a page       | `number`   |         |
+| `onChange`       | `required` define an action to be called when a page changes | `function` |         |
+| `label`          | `required` the `aria-label`/name of the component            | `string`   |         |
+
+## Customizing
+
+See [Customization](../customization) to learn how to change `defaultTheme` styles.
