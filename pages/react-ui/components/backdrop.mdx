@@ -1,0 +1,48 @@
+---
+layout: 'docs'
+title: 'Backdrop'
+description: 'Dark transparent overlay'
+---
+
+import BackdropExample from '../../../components/BackdropExample'
+
+## Base
+
+The default base `Backdrop` doesn't expose any prop, but you can still pass it event handlers, etc.
+
+<BackdropExample />
+
+```jsx
+<Backdrop />
+```
+
+## Complete example
+
+This is what a complete example component looks like, with handlers, state, etc.
+
+```jsx title=BackdropExample.js
+import React, { useState } from 'react'
+import { Backdrop, Button } from 'windmill-react-ui'
+
+function DropdownExample() {
+  const [isOpen, setIsOpen] = useState(false)
+
+  function toggleBackdrop() {
+    setIsOpen(!isOpen)
+  }
+
+  return (
+    <div className="relative">
+      <Button onClick={toggleBackdrop}>Open backdrop</Button>
+
+      {isOpen && <Backdrop onClick={toggleBackdrop} />}
+    </div>
+  )
+}
+
+export default DropdownExample
+```
+
+## Customizing
+
+See [Customization](../customization) to learn how to change `defaultTheme` styles.
