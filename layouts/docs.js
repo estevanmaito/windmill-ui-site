@@ -19,6 +19,11 @@ export default (frontMatter) => {
       <aside className="absolute inset-y-0 left-0 z-10 w-48 p-4 overflow-x-auto bg-white shadow-md md:hidden">
         <ul className="mb-8 space-y-2 text-gray-500">
           {/* refactor this ASAP! */}
+          <li className={`${router.pathname === '/react-ui' && 'text-gray-700 font-semibold'}`}>
+            <Link href="/react-ui">
+              <a>Getting started</a>
+            </Link>
+          </li>
           <li
             className={`${
               router.pathname.split('/')[2] === 'installation' && 'text-gray-700 font-semibold'
@@ -96,6 +101,15 @@ export default (frontMatter) => {
               <div className="sticky top-0 pt-8">
                 <ul className="mb-8 space-y-2 text-gray-500">
                   {/* refactor this ASAP! */}
+                  <li
+                    className={`${
+                      router.pathname.split('/')[2] === '' && 'text-gray-700 font-semibold'
+                    }`}
+                  >
+                    <Link href="/react-ui">
+                      <a>Getting started</a>
+                    </Link>
+                  </li>
                   <li
                     className={`${
                       router.pathname.split('/')[2] === 'installation' &&
