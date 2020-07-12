@@ -1,5 +1,6 @@
 import React from 'react'
 import { MDXProvider } from '@mdx-js/react'
+import { ThemeProvider } from '../context/ThemeContext'
 import '../css/tailwind.css'
 
 import CodeBlock from '../components/CodeBlock'
@@ -11,6 +12,8 @@ const mdComponents = {
 
 export default ({ Component, pageProps }) => (
   <MDXProvider components={mdComponents}>
-    <Component {...pageProps} />
+    <ThemeProvider>
+      <Component {...pageProps} />
+    </ThemeProvider>
   </MDXProvider>
 )

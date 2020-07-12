@@ -1,13 +1,18 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import Container from '../components/layout/Container'
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
 import components from '../pages.json'
+import { ThemeContext } from '../context/ThemeContext'
+
+import MoonIcon from '../icons/moon.svg'
+import SunIcon from '../icons/sun.svg'
 
 export default (frontMatter) => {
   return ({ children }) => {
+    const { theme, toggleTheme } = useContext(ThemeContext)
     const router = useRouter()
 
     const mobileMenu = (
@@ -85,7 +90,7 @@ export default (frontMatter) => {
             </header>
           </Container>
         </div>
-        <Container className="my-16">
+        <Container className="relative my-16">
           <div className="grid grid-cols-12 gap-8 -mt-8">
             <aside className="hidden col-span-2 md:block">
               <div className="sticky top-0 pt-8">
@@ -159,6 +164,16 @@ export default (frontMatter) => {
               </div>
             </aside>
           </div>
+          <button
+            className="fixed bottom-0 right-0 flex items-center p-2 mb-5 mr-5 bg-white border border-gray-700 shadow-md focus:outline-none group"
+            onClick={toggleTheme}
+            aria-hidden="true"
+          >
+            {theme === 'light' ? <MoonIcon className="w-5 h-5" /> : <SunIcon className="w-5 h-5" />}
+            <span className="hidden ml-2 text-sm leading-none group-hover:block">
+              Preview theme
+            </span>
+          </button>
         </Container>
         <Footer />
       </>

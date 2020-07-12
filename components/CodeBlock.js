@@ -1,14 +1,26 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Highlight, { defaultProps } from 'prism-react-renderer'
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live'
 import { mdx } from '@mdx-js/react'
 import * as Windmill from 'windmill-react-ui'
 import HeartIcon from '../icons/heart.svg'
 import EditIcon from '../icons/edit.svg'
-import theme from '../prismTheme'
+import codeTheme from '../prismTheme'
+import { ThemeContext } from '../context/ThemeContext'
+import classNames from 'classnames'
 
 export default ({ children, className, previewClassName, live, render, title }) => {
+  const { theme } = useContext(ThemeContext)
+
   const language = className.replace(/language-/, '')
+
+  const livePreviewStyles = classNames(
+    'pt-4 pl-4 pr-4 border-t border-l border-r font-inter',
+    previewClassName,
+    `theme-${theme}`,
+    theme === 'dark' && 'bg-gray-900 border-gray-900'
+  )
+
   if (live) {
     return (
       <div className="flex flex-col overflow-hidden">
@@ -16,12 +28,9 @@ export default ({ children, className, previewClassName, live, render, title }) 
           code={children.trim()}
           transformCode={(code) => '/** @jsx mdx */' + `<>${code}</>`}
           scope={{ mdx, ...Windmill, HeartIcon, EditIcon }}
-          theme={theme}
+          theme={codeTheme}
         >
-          <LivePreview
-            className={`pt-4 pl-4 pr-4 border-t border-l border-r font-inter ${previewClassName}`}
-            id="__live-preview"
-          />
+          <LivePreview className={livePreviewStyles} id="__live-preview" />
           <div
             className="relative flex-grow flex-shrink overflow-x-auto text-sm"
             style={{ backgroundColor: '#1E1E1E' }}
@@ -61,7 +70,7 @@ export default ({ children, className, previewClassName, live, render, title }) 
           <span className="font-mono text-xs text-gray-600">{title}</span>
         </div>
       )}
-      <Highlight {...defaultProps} theme={theme} code={children.trim()} language={language}>
+      <Highlight {...defaultProps} theme={codeTheme} code={children.trim()} language={language}>
         {({ className, style, tokens, getLineProps, getTokenProps }) => (
           <pre className={className} style={{ ...style, padding: '10px' }}>
             {tokens.map((line, i) => (

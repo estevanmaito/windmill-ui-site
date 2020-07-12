@@ -27,6 +27,8 @@ module.exports = {
       },
     },
   },
-  variants: {},
+  variants: {
+    display: ['responsive', 'group-hover'],
+  },
   plugins: [require('windmill-react-ui/plugin')],
 }
