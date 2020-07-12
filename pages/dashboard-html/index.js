@@ -72,7 +72,7 @@ export default function Home(props) {
               <h2 className="mb-2 font-mono text-xl font-semibold">Description</h2>
               <p className="mb-4">
                 If you're looking for the React version,{' '}
-                <Link href="/sponsor">
+                <Link href="/dashboard-react">
                   <a className="border-b border-primary">go here</a>
                 </Link>
                 . This application is perfect if you are looking for flexibility, like a server
