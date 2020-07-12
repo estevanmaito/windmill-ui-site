@@ -8,7 +8,7 @@ function Nav({ menu }) {
   const [isOpen, setIsOpen] = useState(false)
   return (
     <Container className="py-4">
-      {menu && (
+      {menu ? (
         <>
           <div className="flex items-center justify-between -mt-1 md:hidden">
             <button onClick={() => setIsOpen(!isOpen)} className="p-1 -ml-1">
@@ -25,6 +25,12 @@ function Nav({ menu }) {
             </a>
           </Link>
         </>
+      ) : (
+        <Link href="/">
+          <a className="hidden font-mono font-semibold text-right text-gray-700 md:block">
+            windmill ui
+          </a>
+        </Link>
       )}
     </Container>
   )
