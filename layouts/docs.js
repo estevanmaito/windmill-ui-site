@@ -103,7 +103,7 @@ export default (frontMatter) => {
                   {/* refactor this ASAP! */}
                   <li
                     className={`${
-                      router.pathname.split('/')[2] === '' && 'text-gray-700 font-semibold'
+                      router.pathname === '/react-ui' && 'text-gray-700 font-semibold'
                     }`}
                   >
                     <Link href="/react-ui">
