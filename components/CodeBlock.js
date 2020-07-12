@@ -5,6 +5,7 @@ import { mdx } from '@mdx-js/react'
 import * as Windmill from 'windmill-react-ui'
 import HeartIcon from '../icons/heart.svg'
 import EditIcon from '../icons/edit.svg'
+import Logo from '../icons/chat.svg'
 import codeTheme from '../prismTheme'
 import { ThemeContext } from '../context/ThemeContext'
 import classNames from 'classnames'
@@ -27,7 +28,7 @@ export default ({ children, className, previewClassName, live, render, title }) 
         <LiveProvider
           code={children.trim()}
           transformCode={(code) => '/** @jsx mdx */' + `<>${code}</>`}
-          scope={{ mdx, ...Windmill, HeartIcon, EditIcon }}
+          scope={{ mdx, ...Windmill, HeartIcon, EditIcon, Logo }}
           theme={codeTheme}
         >
           <LivePreview className={livePreviewStyles} id="__live-preview" />

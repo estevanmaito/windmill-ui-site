@@ -1,0 +1,75 @@
+---
+layout: 'docs'
+title: 'Windmill React UI'
+description: 'The component library for fast and accessible development of gorgeous interfaces.'
+---
+
+import Alert from '../../components/Alert'
+
+Windmill React UI is a component library based on Tailwind CSS, that goes beyond usual libraries. It's built upon three principles:
+
+- You get [dark theme](dark-theme) using one prop
+- It's accessible out-of-the-box (and built listening to a real screen reader)
+- Easier to learn through live code examples
+
+<Alert>Click the "moon" icon in the bottom right to see previews in dark mode.</Alert>
+
+```jsx live
+<nav className="flex items-center justify-between px-6 py-2">
+  <a className="text-gray-700 dark:text-gray-400" href="#">
+    <Logo className="w-6 h-6 text-purple-600" />
+  </a>
+  <ul className="flex space-x-4">
+    <li>
+      <Button layout="link">Products</Button>
+    </li>
+    <li>
+      <Button layout="link">Contact</Button>
+    </li>
+    <li>
+      <Button>Login</Button>
+    </li>
+  </ul>
+</nav>
+```
+
+## Composable
+
+You have unlimited options combining components together, and you still have the power of using Tailwind to customize every little detail of any component.
+
+```jsx live
+<Card className="max-w-md">
+  <CardBody>
+    <div className="flex">
+      <Avatar size="large" src="/img/avatar-1.jpg" alt="Judith" />
+      <div className="ml-2">
+        <p className="font-semibold dark:text-gray-300">Judith Ipsum</p>
+        <p className="text-xs text-gray-500">@judithipsum</p>
+      </div>
+    </div>
+    <p className="my-2 dark:text-gray-300">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga, cum commodi a omnis numquam
+      quod? Totam exercitationem quos hic ipsam at qui cum numquam, sed amet ratione! Ratione, nihil
+      dolorum.
+    </p>
+    <div className="flex items-end justify-between">
+      <div>
+        <Badge type="neutral">#tailwindcss</Badge>
+        <Badge type="neutral" className="ml-2">
+          #react
+        </Badge>
+      </div>
+      <div>
+        <Button size="small" icon={HeartIcon} layout="link" />
+        <Button size="small" className="ml-2">
+          Read more
+        </Button>
+      </div>
+    </div>
+  </CardBody>
+</Card>
+```
+
+## Windmill Dashboard React
+
+If you are looking for a dashboard application or wanna see how Windmill React UI could be used in a complete application, take a look at the [Windmill Dashboard React](/dashboard-react).
