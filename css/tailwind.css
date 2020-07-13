@@ -47,7 +47,7 @@
     @apply text-gray-700;
   }
 
-  p > a, > a, table a, li > a {
+  p > a, > a, table a, > ul > li > a {
     @apply border-b border-primary;
 
     > code {

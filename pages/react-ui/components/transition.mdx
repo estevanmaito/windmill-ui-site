@@ -1,0 +1,118 @@
+---
+layout: 'docs'
+title: 'Transition'
+description: 'User profile image component'
+---
+
+import TransitionExample from '../../../components/TransitionExample'
+
+This component is a wrapper around `react-transition-group` that makes is it easy to create transitions using Tailwind CSS classes.
+
+## Basics
+
+Take a look at this compressed example.
+
+<TransitionExample />
+
+```jsx
+<Transition
+  show={isOpen}
+  enter="transition ease-out duration-100 transform"
+  enterFrom="opacity-0 scale-95"
+  enterTo="opacity-100 scale-100"
+  leave="transition ease-in duration-75 transform"
+  leaveFrom="opacity-100 scale-100"
+  leaveTo="opacity-0 scale-95"
+>
+  <div className="absolute left-0 w-56 mt-2 rounded-md shadow-lg">
+    <div className="p-4 bg-white rounded-md shadow-xs">Hi</div>
+  </div>
+</Transition>
+```
+
+## Show
+
+The `show` prop defines the visibility of the components inside the `Transition` and starts the animations.
+
+```jsx
+<Transition show={isOpen}>...</Transition>
+```
+
+## Transition timings
+
+There are six transition timings available: `enter`, `enterFrom`, `enterTo`, `leave`, `leaveFrom` and `leaveTo`.
+
+- `enter`: styles that will control the entire enter (appearing) phase
+- `enterFrom`: styles to start from
+- `enterTo`: end result styles
+- `leave`: styles that will control the entire leave (disappearing) phase
+- `leaveFrom`: styles to start from (you would usually 'leave from' where you 'entered to')
+- `leaveTo`: end result styles (you would usually 'leave to' where you 'entered from')
+
+```jsx
+<Transition
+  show={isOpen}
+  enter="transition ease-out duration-100 transform"
+  enterFrom="opacity-0 scale-95"
+  enterTo="opacity-100 scale-100"
+  leave="transition ease-in duration-75 transform"
+  leaveFrom="opacity-100 scale-100"
+  leaveTo="opacity-0 scale-95"
+>
+  ...
+</Transition>
+```
+
+## Composition
+
+There will be times where you need two components transitioning at the same time, based on the same condition.
+
+Take the example below, extracted from the `MobileSidebar` of the [Windmill Dashboard React](/dashboard-react). The `Backdrop` should just appear (fade), while the sidebar should slide from the left.
+
+In this case we use a root transition that will control all inner transitions with a single `show` prop. Note that the inner `Transition`s don't have a `show` prop, only the styles to be applied.
+
+```jsx
+<Transition show={isSidebarOpen}>
+  <>
+    <Transition
+      enter="transition ease-in-out duration-150"
+      enterFrom="opacity-0"
+      enterTo="opacity-100"
+      leave="transition ease-in-out duration-150"
+      leaveFrom="opacity-100"
+      leaveTo="opacity-0"
+    >
+      <Backdrop onClick={closeSidebar} />
+    </Transition>
+
+    <Transition
+      enter="transition ease-in-out duration-150"
+      enterFrom="opacity-0 transform -translate-x-20"
+      enterTo="opacity-100"
+      leave="transition ease-in-out duration-150"
+      leaveFrom="opacity-100"
+      leaveTo="opacity-0 transform -translate-x-20"
+    >
+      <aside className="fixed inset-y-0 z-30 flex-shrink-0 w-64 mt-16 overflow-y-auto bg-white dark:bg-gray-800 md:hidden">
+        <SidebarContent />
+      </aside>
+    </Transition>
+  </>
+</Transition>
+```
+
+## Props overview
+
+| Prop        | Description                             | Type      | Default |
+| ----------- | --------------------------------------- | --------- | ------- |
+| `show`      | define the visibility of the components | `boolean` |         |
+| `enter`     | classes to apply on `enter` phase       | `string`  |         |
+| `enterFrom` | classes to apply on `enterFrom` phase   | `string`  |         |
+| `enterTo`   | classes to apply on `enterTo` phase     | `string`  |         |
+| `leave`     | classes to apply on `leave` phase       | `string`  |         |
+| `leaveFrom` | classes to apply on `leaveFrom` phase   | `string`  |         |
+| `leaveTo`   | classes to apply on `leaveTo` phase     | `string`  |         |
+
+## Customizing
+
+See [Customization](../customization) to learn how to change `defaultTheme` styles.
