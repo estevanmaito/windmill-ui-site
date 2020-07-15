@@ -21,13 +21,13 @@ export default function Sponsor() {
         </Container>
       </div>
 
-      <Container className="my-16 font-mono text-gray-800">
-        <p className="mb-4 font-mono text-gray-800">
+      <Container className="max-w-2xl my-16 text-gray-800">
+        <p className="mb-4 text-gray-800">
           This is the work of a single developer, creating fully functional, componentized and
           production-ready applications for free. I would love to continue this way and avoid the{' '}
           <strong>"Want this feature? Pay for it!"</strong> way.
         </p>
-        <p className="mb-8 font-mono text-gray-800">
+        <p className="mb-8 text-gray-800">
           You can help me keep it this way and receive some benefits by sponsoring me, so I can give
           100% of my time to it.
         </p>

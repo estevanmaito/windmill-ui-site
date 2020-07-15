@@ -51,41 +51,6 @@ export default function Home() {
         </div>
       </Container>
 
-      <Container className="my-16">
-        <h2 className="mb-6 font-mono text-xl font-semibold text-gray-700">Features</h2>
-        <div>
-          <div className="space-y-4 text-gray-700">
-            <p className="">Effortless accessible</p>
-            <p className="">Dark mode included</p>
-            <p className="">Multiple components</p>
-            <p className="">Styled with Tailwind CSS</p>
-          </div>
-        </div>
-      </Container>
-
-      <Container>
-        <div className="grid my-20 md:grid-cols-2">
-          <div></div>
-          <div>
-            <p className="mb-4 text-gray-700">
-              This is the work of a single developer, creating fully functional, componentized and
-              production-ready applications for free. I would love to continue this way and avoid
-              the <strong>"Want this feature? Pay for it!"</strong> way.
-            </p>
-            <p className="mb-8 text-gray-700">
-              You can help me keep it this way and receive some benefits by sponsoring me, so I can
-              give 100% of my time to it.
-            </p>
-            <a
-              className="px-6 py-2 font-mono text-lg text-black bg-primary focus:outline-none"
-              href="https://www.patreon.com/estevanmaito"
-            >
-              Become a sponsor
-            </a>
-          </div>
-        </div>
-      </Container>
-
       <Footer />
     </>
   )
