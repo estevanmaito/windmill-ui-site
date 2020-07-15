@@ -8,6 +8,8 @@ import ButtonOutline from '../../components/ButtonOutline'
 import Footer from '../../components/Footer'
 
 export default function Home(props) {
+  const createdAt = new Date(props.lastRelease.created_at)
+  const lastUpdate = `${createdAt.getMonth() + 1}/${createdAt.getFullYear()}`
   return (
     <>
       <Head>
@@ -43,18 +45,25 @@ export default function Home(props) {
             <div className="p-4 border">
               <div className="flex justify-between">
                 <p>Version</p>
-                <p className="font-mono text-sm font-semibold">{props.lastRelease.name}</p>
+                <p className="font-mono text-sm font-semibold">{props.lastRelease.tag_name}</p>
               </div>
               <div className="flex justify-between">
                 <p>Last update</p>
-                <p className="font-mono text-sm font-semibold">07/2020</p>
+                <p className="font-mono text-sm font-semibold">{lastUpdate}</p>
               </div>
               <div className="flex justify-between">
                 <p>License</p>
                 <p className="font-mono text-sm font-semibold">MIT</p>
               </div>
               <div className="flex justify-between mb-4">
-                <p>Read docs</p>
+                <p>
+                  <a
+                    className="border-b border-primary"
+                    href="https://github.com/estevanmaito/windmill-react-ui"
+                  >
+                    View on GitHub
+                  </a>
+                </p>
               </div>
               <ButtonOutline className="w-full mb-4">live preview</ButtonOutline>
               <Button tag="a" href={props.lastRelease.zipball_url} className="w-full">
@@ -146,10 +155,12 @@ export default function Home(props) {
 }
 
 export async function getStaticProps(ctx) {
-  const res = await fetch('https://api.github.com/repos/estevanmaito/windmill-dashboard-react/tags')
+  const res = await fetch(
+    'https://api.github.com/repos/estevanmaito/windmill-dashboard-react/releases/latest'
+  )
   const lastRelease = await res.json()
 
   return {
-    props: { lastRelease: lastRelease[0] },
+    props: { lastRelease: lastRelease },
   }
 }
