@@ -2,13 +2,17 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
   purge: {
-    enabled: false,
     content: [
       './pages/**/*.js',
       './pages/**/*.mdx',
       './containers/**/*.js',
       './components/**/*.js',
+      './layouts/**/*.js',
+      'node_modules/windmill-react-ui/lib/defaultTheme.js',
     ],
+    options: {
+      whitelist: ['theme-dark'],
+    },
   },
   theme: {
     extend: {
