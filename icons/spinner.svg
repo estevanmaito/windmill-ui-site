@@ -1,0 +1,5 @@
+<svg style="margin: auto; background: none; display: block; shape-rendering: auto;" width="20px" height="20px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
+<circle cx="50" cy="50" fill="none" stroke="#000000" stroke-width="5" r="38" stroke-dasharray="179.0707812546182 61.690260418206066" transform="rotate(263.538 50 50)">
+  <animateTransform attributeName="transform" type="rotate" repeatCount="indefinite" dur="0.9803921568627451s" values="0 50 50;360 50 50" keyTimes="0;1"></animateTransform>
+</circle>
+</svg>

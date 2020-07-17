@@ -24,6 +24,7 @@
     "react-live": "2.2.2",
     "rehype-autolink-headings": "4.0.0",
     "rehype-slug": "3.0.0",
+    "swr": "0.2.3",
     "windmill-react-ui": "0.1.2-beta.0"
   },
   "devDependencies": {
