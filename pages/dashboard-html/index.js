@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import Link from 'next/link'
 import Container from '../../components/layout/Container'
 import Banner from '../../components/Banner'
@@ -6,14 +5,16 @@ import Nav from '../../components/Nav'
 import Button from '../../components/Button'
 import ButtonOutline from '../../components/ButtonOutline'
 import Footer from '../../components/Footer'
+import SEO from '../../components/SEO'
 
 export default function Home(props) {
   return (
     <>
-      <Head>
-        <title>Windmill Dashboard HTML</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <SEO
+        title="Windmill Dashboard HTML"
+        description="The modern, accessible and dark theme ready HTML dashboard. Full of custom, reusable components to speed up the development of admin panels."
+        image="https://windmillui.com/public/img/windmill-dashboard-html.png"
+      />
 
       <Banner tag={Link} href="/sponsor">
         You can sponsor this project and access exclusive content.

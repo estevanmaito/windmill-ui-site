@@ -16,6 +16,7 @@ const mdComponents = {
 
 import MoonIcon from '../icons/moon.svg'
 import SunIcon from '../icons/sun.svg'
+import SEO from '../components/SEO'
 
 export default (frontMatter) => {
   return ({ children }) => {
@@ -81,6 +82,11 @@ export default (frontMatter) => {
 
     return (
       <MDXProvider components={mdComponents}>
+        <SEO
+          title={`${frontMatter.title} | Windmill React UI`}
+          description={frontMatter.description}
+          image="https://windmillui.com/public/img/windmill-react-ui.png"
+        />
         <style
           dangerouslySetInnerHTML={{
             __html: `

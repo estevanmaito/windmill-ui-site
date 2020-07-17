@@ -1,16 +1,13 @@
-import Head from 'next/head'
 import Link from 'next/link'
 import Container from '../components/layout/Container'
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
+import SEO from '../components/SEO'
 
 export default function Home() {
   return (
     <>
-      <Head>
-        <title>Windmill UI</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <SEO title="Windmill UI" image="https://windmillui.com/public/img/windmillui.png" />
       <div className="bg-pattern">
         <Nav />
         <Container>

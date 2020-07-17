@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import Link from 'next/link'
 import Container from '../../components/layout/Container'
 import Banner from '../../components/Banner'
@@ -6,16 +5,18 @@ import Nav from '../../components/Nav'
 import Button from '../../components/Button'
 import ButtonOutline from '../../components/ButtonOutline'
 import Footer from '../../components/Footer'
+import SEO from '../../components/SEO'
 
 export default function Home(props) {
   const createdAt = new Date(props.lastRelease.created_at)
   const lastUpdate = `${createdAt.getMonth() + 1}/${createdAt.getFullYear()}`
   return (
     <>
-      <Head>
-        <title>Windmill Dashboard React</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <SEO
+        title="Windmill Dashboard React"
+        description="The modern, accessible and dark theme ready React dashboard. PWA ready (can be installed on mobile), works offline, made on top of reusable components."
+        image="https://windmillui.com/public/img/windmill-dashboard-react.png"
+      />
 
       <Banner tag={Link} href="/sponsor">
         You can sponsor this project and access exclusive content.
