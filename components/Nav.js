@@ -27,7 +27,7 @@ function Nav({ menu }) {
         </>
       ) : (
         <Link href="/">
-          <a className="hidden font-mono font-semibold text-right text-gray-700 md:block">
+          <a className="block font-mono font-semibold text-right text-gray-700">
             windmill ui
           </a>
         </Link>
