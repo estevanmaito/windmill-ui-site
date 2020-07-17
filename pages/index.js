@@ -21,7 +21,7 @@ export default function Home() {
       </div>
 
       <Container className="my-16">
-        <div className="grid gap-10 md:gap-8 md:grid-cols-3">
+        <div className="grid gap-10 md:gap-16 md:grid-cols-3">
           <div className="text-gray-700">
             <p className="mb-2 font-mono text-lg font-semibold">Windmill Dashboard HTML</p>
             <p className="mb-2">No frameworks, no dependencies. Pure, flexible web development.</p>
