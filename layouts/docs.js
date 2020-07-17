@@ -103,7 +103,7 @@ export default (frontMatter) => {
           </Container>
         </div>
         <Container className="relative my-16">
-          <div className="grid grid-cols-12 gap-8 -mt-8">
+          <div className="grid grid-cols-12 -mt-8 md:gap-8">
             <aside className="hidden col-span-2 md:block">
               <div className="sticky top-0 pt-8">
                 <ul className="mb-8 space-y-2 text-gray-500">
