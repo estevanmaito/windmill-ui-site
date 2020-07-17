@@ -13,7 +13,7 @@ export default function Home(props) {
       <SEO
         title="Windmill Dashboard HTML"
         description="The modern, accessible and dark theme ready HTML dashboard. Full of custom, reusable components to speed up the development of admin panels."
-        image="https://windmillui.com/public/img/windmill-dashboard-html.png"
+        image="https://windmillui.com/img/windmill-dashboard-html.png"
       />
 
       <Banner tag={Link} href="/sponsor">

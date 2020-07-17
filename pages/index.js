@@ -7,7 +7,7 @@ import SEO from '../components/SEO'
 export default function Home() {
   return (
     <>
-      <SEO title="Windmill UI" image="https://windmillui.com/public/img/windmillui.png" />
+      <SEO title="Windmill UI" image="https://windmillui.com/img/windmillui.png" />
       <div className="bg-pattern">
         <Nav />
         <Container>

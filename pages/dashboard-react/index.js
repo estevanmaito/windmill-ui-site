@@ -23,7 +23,7 @@ export default function Home(props) {
       <SEO
         title="Windmill Dashboard React"
         description="The modern, accessible and dark theme ready React dashboard. PWA ready (can be installed on mobile), works offline, made on top of reusable components."
-        image="https://windmillui.com/public/img/windmill-dashboard-react.png"
+        image="https://windmillui.com/img/windmill-dashboard-react.png"
       />
 
       <Banner tag={Link} href="/sponsor">

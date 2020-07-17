@@ -5,7 +5,7 @@ function SEO({ children, title, description, index = true, image }) {
   const siteDescription = description
     ? description
     : 'Stunning components for faster web development'
-  const socialImage = image ? image : 'https://windmillui.com/public/img/windmillui.png'
+  const socialImage = image ? image : 'https://windmillui.com/img/windmillui.png'
   return (
     <Head>
       <meta name="description" content={description || siteDescription} />

@@ -85,7 +85,7 @@ export default (frontMatter) => {
         <SEO
           title={`${frontMatter.title} | Windmill React UI`}
           description={frontMatter.description}
-          image="https://windmillui.com/public/img/windmill-react-ui.png"
+          image="https://windmillui.com/img/windmill-react-ui.png"
         />
         <style
           dangerouslySetInnerHTML={{
