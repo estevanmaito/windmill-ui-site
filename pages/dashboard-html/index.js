@@ -57,7 +57,14 @@ export default function Home(props) {
                 <p className="font-mono text-sm font-semibold">MIT</p>
               </div>
               <div className="flex justify-between mb-4">
-                <p>Read docs</p>
+                <p>
+                  <a
+                    className="border-b border-primary"
+                    href="https://github.com/estevanmaito/windmill-dashboard"
+                  >
+                    View on GitHub
+                  </a>
+                </p>
               </div>
               <ButtonOutline className="w-full mb-4">live preview</ButtonOutline>
               <Button tag="a" href={props.lastRelease.zipball_url} className="w-full">
