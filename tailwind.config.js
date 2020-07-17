@@ -1,6 +1,7 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
+const windmill = require('windmill-react-ui/config')
 
-module.exports = {
+module.exports = windmill({
   purge: {
     content: [
       './pages/**/*.js',
@@ -8,11 +9,7 @@ module.exports = {
       './containers/**/*.js',
       './components/**/*.js',
       './layouts/**/*.js',
-      'node_modules/windmill-react-ui/lib/defaultTheme.js',
     ],
-    options: {
-      whitelist: ['theme-dark'],
-    },
   },
   theme: {
     extend: {
@@ -33,6 +30,5 @@ module.exports = {
   },
   variants: {
     display: ['responsive', 'group-hover'],
-  },
-  plugins: [require('windmill-react-ui/plugin')],
-}
+  }
+})
