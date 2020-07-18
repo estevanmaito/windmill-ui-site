@@ -14,17 +14,19 @@ npm install windmill-react-ui
 
 ## Add to Tailwind
 
-The second step is to add Windmill to your Tailwind configuration file as a plugin. If you don't have Tailwind configured yet, [see the docs](https://tailwindcss.com/docs/installation).
+The second step is to wrap the content of your Tailwind configuration file with Windmill. It will merge the necessary styles and plugins and you can keep using your config file as usual. If you don't have Tailwind configured yet, [see the docs](https://tailwindcss.com/docs/installation).
 
 ```js title=tailwind.config.js
-const windmillPlugin = require('windmill-react-ui/plugin')
+const windmill = require('windmill-react-ui/config')
 
-module.exports = {
+module.exports = windmill({
   purge: [],
-  theme: {},
+  theme: {
+    extend: {},
+  },
   variants: {},
-  plugins: [windmillPlugin()],
-}
+  plugins: [],
+})
 ```
 
 ## Usage
