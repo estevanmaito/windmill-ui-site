@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Container from '../components/layout/Container'
 import Nav from '../components/Nav'
+import Footer from '../components/Footer'
 
 export default function Sponsor() {
   return (
@@ -40,16 +41,7 @@ export default function Sponsor() {
         <p className="mt-2 text-xs text-gray-700">Redirects to Patreon</p>
       </Container>
 
-      <footer className="py-20 font-mono">
-        <Container>
-          <p className="text-center text-gray-800">
-            Made by{' '}
-            <a className="border-b border-primary" href="https://twitter.com/estevanmaito">
-              Estevan Maito
-            </a>
-          </p>
-        </Container>
-      </footer>
+      <Footer />
     </>
   )
 }
