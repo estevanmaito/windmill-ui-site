@@ -9,7 +9,7 @@ import SEO from '../../components/SEO'
 import useSWR from 'swr'
 import SpinnerIcon from '../../icons/spinner.svg'
 
-export default function Home(props) {
+export default function Home() {
   const fetcher = (...args) => fetch(...args).then((res) => res.json())
   const { data, error } = useSWR(
     'https://api.github.com/repos/estevanmaito/windmill-dashboard-react/releases/latest',
@@ -76,7 +76,13 @@ export default function Home(props) {
                   </a>
                 </p>
               </div>
-              <ButtonOutline className="w-full mb-4">live preview</ButtonOutline>
+              <ButtonOutline
+                tag="a"
+                href="https://demo.windmillui.com/dashboard-react"
+                className="w-full mb-4"
+              >
+                live preview
+              </ButtonOutline>
               {data ? (
                 <Button tag="a" href={data.zipball_url} className="w-full">
                   download
