@@ -1,15 +1,16 @@
 import React from 'react'
 
-function ButtonOutline({ children, className, ...other }) {
+function ButtonOutline({ children, tag, className, ...other }) {
+  const Component = tag || 'button'
   return (
-    <button
-      className={`px-6 py-2 font-mono text-gray-700 border border-primary focus:outline-none ${
+    <Component
+      className={`inline-block px-6 py-2 font-mono text-gray-700 border border-primary focus:outline-none ${
         className || ''
       }`}
       {...other}
     >
       {children}
-    </button>
+    </Component>
   )
 }
 
