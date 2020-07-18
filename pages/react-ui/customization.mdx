@@ -4,6 +4,8 @@ title: 'Customization'
 description: 'How to style each component'
 ---
 
+import Alert from '../../components/Alert'
+
 Windmill React UI uses a default theme under the hood to provide you a concise, but still flexible styling experience. You can find the entire file [here](https://github.com/estevanmaito/windmill-react-ui/blob/master/src/themes/default.js).
 
 You can reference it in your code importing the default theme `windmill-react-ui/defaultTheme`.
@@ -22,7 +24,10 @@ export default {
 }
 ```
 
-Note that you only need to specify the values you are changing within your theme. It will be merged together with the default theme automtically.
+<Alert>
+  Note that you only need to specify the values you are changing within your theme. It will be
+  merged together with the default theme automtically.
+</Alert>
 
 Then pass it to the `Windmill` component that is enclosing your root components, using the prop `theme`.
 
@@ -37,6 +42,8 @@ ReactDOM.render(
   document.getElementById('root')
 )
 ```
+
+As a side note, you still need to pass your theme file to Purge to make sure your styles will appear in the production build.
 
 ## Dark theme
 
