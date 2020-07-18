@@ -24,7 +24,7 @@ export default (frontMatter) => {
     const router = useRouter()
 
     const mobileMenu = (
-      <aside className="absolute inset-y-0 left-0 z-10 w-48 p-4 overflow-x-auto bg-white shadow-md md:hidden">
+      <aside className="absolute inset-y-0 left-0 w-48 px-4 pt-6 pb-10 overflow-x-auto bg-white shadow-md md:hidden">
         <ul className="mb-8 space-y-2 text-gray-500">
           {/* refactor this ASAP! */}
           <li className={`${router.pathname === '/react-ui' && 'text-gray-700 font-semibold'}`}>

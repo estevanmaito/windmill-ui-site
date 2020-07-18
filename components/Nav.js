@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { Backdrop } from 'windmill-react-ui'
 import Container from './layout/Container'
@@ -6,6 +6,21 @@ import MenuIcon from '../icons/menu.svg'
 
 function Nav({ menu }) {
   const [isOpen, setIsOpen] = useState(false)
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.classList.add('overflow-hidden')
+    } else {
+      document.body.classList.remove('overflow-hidden')
+    }
+  }, [isOpen])
+
+  function handleMenuClose(e) {
+    if (e.target.id === 'backdrop') {
+      setIsOpen(false)
+    }
+  }
+
   return (
     <Container className="py-4">
       {menu ? (
@@ -14,7 +29,11 @@ function Nav({ menu }) {
             <button onClick={() => setIsOpen(!isOpen)} className="p-1 -ml-1">
               <MenuIcon className="w-6 h-6" />
             </button>
-            {isOpen && <Backdrop onClick={() => setIsOpen(false)}>{menu}</Backdrop>}
+            {isOpen && (
+              <Backdrop id="backdrop" onClick={handleMenuClose}>
+                {menu}
+              </Backdrop>
+            )}
             <Link href="/">
               <a className="block font-mono font-semibold text-right text-gray-700">windmill ui</a>
             </Link>
@@ -27,9 +46,7 @@ function Nav({ menu }) {
         </>
       ) : (
         <Link href="/">
-          <a className="block font-mono font-semibold text-right text-gray-700">
-            windmill ui
-          </a>
+          <a className="block font-mono font-semibold text-right text-gray-700">windmill ui</a>
         </Link>
       )}
     </Container>
