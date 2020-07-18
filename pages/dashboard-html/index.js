@@ -6,8 +6,18 @@ import Button from '../../components/Button'
 import ButtonOutline from '../../components/ButtonOutline'
 import Footer from '../../components/Footer'
 import SEO from '../../components/SEO'
+import useSWR from 'swr'
+import SpinnerIcon from '../../icons/spinner.svg'
 
-export default function Home(props) {
+export default function Home() {
+  const fetcher = (...args) => fetch(...args).then((res) => res.json())
+  const { data, error } = useSWR(
+    'https://api.github.com/repos/estevanmaito/windmill-dashboard/releases/latest',
+    fetcher
+  )
+
+  const createdAt = new Date(data ? data.created_at : Date.now())
+  const lastUpdate = `${createdAt.getMonth() + 1}/${createdAt.getFullYear()}`
   return (
     <>
       <SEO
@@ -46,11 +56,13 @@ export default function Home(props) {
             <div className="p-4 border">
               <div className="flex justify-between">
                 <p>Version</p>
-                <p className="font-mono text-sm font-semibold">{props.lastRelease.name}</p>
+                <p className="font-mono text-sm font-semibold">
+                  {data ? data.tag_name : 'Loading'}
+                </p>
               </div>
               <div className="flex justify-between">
                 <p>Last update</p>
-                <p className="font-mono text-sm font-semibold">07/2020</p>
+                <p className="font-mono text-sm font-semibold">{lastUpdate}</p>
               </div>
               <div className="flex justify-between">
                 <p>License</p>
@@ -66,10 +78,22 @@ export default function Home(props) {
                   </a>
                 </p>
               </div>
-              <ButtonOutline className="w-full mb-4">live preview</ButtonOutline>
-              <Button tag="a" href={props.lastRelease.zipball_url} className="w-full">
-                download
-              </Button>
+              <ButtonOutline
+                tag="a"
+                href="https://demo.windmillui.com/dashboard-html"
+                className="w-full mb-4"
+              >
+                live preview
+              </ButtonOutline>
+              {data ? (
+                <Button tag="a" href={data.zipball_url} className="w-full">
+                  download
+                </Button>
+              ) : (
+                <Button className="w-full">
+                  <SpinnerIcon className="w-5 h-5" />
+                </Button>
+              )}
             </div>
           </aside>
         </div>
@@ -141,13 +165,4 @@ export default function Home(props) {
       <Footer />
     </>
   )
-}
-
-export async function getStaticProps(ctx) {
-  const res = await fetch('https://api.github.com/repos/estevanmaito/windmill-dashboard/tags')
-  const lastRelease = await res.json()
-
-  return {
-    props: { lastRelease: lastRelease[0] },
-  }
 }
