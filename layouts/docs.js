@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { useRouter } from 'next/router'
+import Link from 'next/link'
 import Container from '../components/layout/Container'
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
@@ -79,6 +80,11 @@ export default (frontMatter) => {
                     </li>
                   ))}
                 </ul>
+                <Link href="/sponsor">
+                  <a className="inline-block px-2 py-1 mt-4 text-sm bg-primary">
+                    Sponsor this project
+                  </a>
+                </Link>
               </div>
             </aside>
           </div>
