@@ -1,10 +1,9 @@
 import React, { useContext } from 'react'
 import { useRouter } from 'next/router'
-import Link from 'next/link'
 import Container from '../components/layout/Container'
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
-import components from '../pages.json'
+import pages from '../pages.json'
 import { ThemeContext } from '../context/ThemeContext'
 import { MDXProvider } from '@mdx-js/react'
 import CodeBlock from '../components/CodeBlock'
@@ -17,6 +16,7 @@ const mdComponents = {
 import MoonIcon from '../icons/moon.svg'
 import SunIcon from '../icons/sun.svg'
 import SEO from '../components/SEO'
+import MenuContent from '../components/react-ui/MenuContent'
 
 export default (frontMatter) => {
   return ({ children }) => {
@@ -25,58 +25,7 @@ export default (frontMatter) => {
 
     const mobileMenu = (
       <aside className="absolute inset-y-0 left-0 w-48 px-4 pt-6 pb-10 overflow-x-auto bg-white shadow-md md:hidden">
-        <ul className="mb-8 space-y-2 text-gray-500">
-          {/* refactor this ASAP! */}
-          <li className={`${router.pathname === '/react-ui' && 'text-gray-700 font-semibold'}`}>
-            <Link href="/react-ui">
-              <a>Getting started</a>
-            </Link>
-          </li>
-          <li
-            className={`${
-              router.pathname.split('/')[2] === 'installation' && 'text-gray-700 font-semibold'
-            }`}
-          >
-            <Link href="/react-ui/installation">
-              <a>Installation</a>
-            </Link>
-          </li>
-          <li
-            className={`${
-              router.pathname.split('/')[2] === 'customization' && 'text-gray-700 font-semibold'
-            }`}
-          >
-            <Link href="/react-ui/customization">
-              <a>Customization</a>
-            </Link>
-          </li>
-          <li
-            className={`${
-              router.pathname.split('/')[2] === 'dark-theme' && 'text-gray-700 font-semibold'
-            }`}
-          >
-            <Link href="/react-ui/dark-theme">
-              <a>Dark theme</a>
-            </Link>
-          </li>
-        </ul>
-        <span className="block mb-2 font-mono text-sm font-semibold tracking-wide text-gray-500 uppercase">
-          Components
-        </span>
-        <ul className="space-y-2 text-gray-500">
-          {components.map((page) => (
-            <li
-              key={page.url}
-              className={`${
-                router.pathname.split('/')[3] === page.url && 'text-gray-700 font-semibold'
-              }`}
-            >
-              <Link href={`/react-ui/components/${page.url}`}>
-                <a>{page.title}</a>
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <MenuContent router={router} page={pages} />
       </aside>
     )
 
@@ -112,65 +61,7 @@ export default (frontMatter) => {
           <div className="grid grid-cols-12 -mt-8 md:gap-8">
             <aside className="hidden col-span-2 md:block">
               <div className="sticky top-0 pt-8">
-                <ul className="mb-8 space-y-2 text-gray-500">
-                  {/* refactor this ASAP! */}
-                  <li
-                    className={`${
-                      router.pathname === '/react-ui' && 'text-gray-700 font-semibold'
-                    }`}
-                  >
-                    <Link href="/react-ui">
-                      <a>Getting started</a>
-                    </Link>
-                  </li>
-                  <li
-                    className={`${
-                      router.pathname.split('/')[2] === 'installation' &&
-                      'text-gray-700 font-semibold'
-                    }`}
-                  >
-                    <Link href="/react-ui/installation">
-                      <a>Installation</a>
-                    </Link>
-                  </li>
-                  <li
-                    className={`${
-                      router.pathname.split('/')[2] === 'customization' &&
-                      'text-gray-700 font-semibold'
-                    }`}
-                  >
-                    <Link href="/react-ui/customization">
-                      <a>Customization</a>
-                    </Link>
-                  </li>
-                  <li
-                    className={`${
-                      router.pathname.split('/')[2] === 'dark-theme' &&
-                      'text-gray-700 font-semibold'
-                    }`}
-                  >
-                    <Link href="/react-ui/dark-theme">
-                      <a>Dark theme</a>
-                    </Link>
-                  </li>
-                </ul>
-                <span className="block mb-2 font-mono text-sm font-semibold tracking-wide text-gray-500 uppercase">
-                  Components
-                </span>
-                <ul className="space-y-2 text-gray-500">
-                  {components.map((page) => (
-                    <li
-                      key={page.url}
-                      className={`${
-                        router.pathname.split('/')[3] === page.url && 'text-gray-700 font-semibold'
-                      }`}
-                    >
-                      <Link href={`/react-ui/components/${page.url}`}>
-                        <a>{page.title}</a>
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
+                <MenuContent router={router} page={pages} />
               </div>
             </aside>
             <main className="col-span-12 pt-8 md:col-span-10 lg:col-span-8 markdown">
