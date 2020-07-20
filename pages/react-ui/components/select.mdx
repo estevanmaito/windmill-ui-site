@@ -24,6 +24,23 @@ The default base `select` doesn't need any special prop, but all attributes that
 </Label>
 ```
 
+## Multiple
+
+A multi `select` is created including the `multiple` prop to the `Select`.
+
+```jsx live
+<Label>
+  <span>Multiselect</span>
+  <Select className="mt-1" multiple>
+    <option>Option 1</option>
+    <option>Option 2</option>
+    <option>Option 3</option>
+    <option>Option 4</option>
+    <option>Option 5</option>
+  </Select>
+</Label>
+```
+
 ## Disabled
 
 The `disabled` prop applies disabled styles to the `select`.
@@ -63,6 +80,7 @@ Give a value of `false` to the `valid` prop to apply invalid styles to the `sele
 | ---------- | --------------------------------------------- | --------- | ------- |
 | `disabled` | apply disabled styles to the `select`         | `boolean` |         |
 | `valid`    | apply valid or invalid styles to the `select` | `boolean` |         |
+| `multiple` | create a multi option `select`                | `boolean` |         |
 
 ## Customizing
 
