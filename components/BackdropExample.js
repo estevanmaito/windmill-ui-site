@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import { Backdrop, Button } from 'windmill-react-ui'
+import { Backdrop, Button } from '@windmill/react-ui'
 
 function DropdownExample() {
   const [isOpen, setIsOpen] = useState(false)

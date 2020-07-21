@@ -22,7 +22,7 @@ Simply import `WindmillContext` and destructure `mode` (current selected mode) a
 
 ```jsx title=SomeComponent.js
 import React, { useContext } from 'react'
-import { Button, WindmillContext } from 'windmill-react-ui'
+import { Button, WindmillContext } from '@windmill/react-ui'
 
 function SomeComponent() {
   const { mode, toggleMode } = useContext(WindmillContext)
@@ -41,7 +41,7 @@ export default SomeComponent
 The default theme is light, but if you want to make the dark theme standard, add the prop `dark` to your `Windmill` component,
 
 ```jsx title=App.js
-import { Windmill } from 'windmill-react-ui'
+import { Windmill } from '@windmill/react-ui'
 
 ReactDOM.render(
   <Windmill dark>

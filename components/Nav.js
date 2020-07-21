@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { Backdrop } from 'windmill-react-ui'
+import { Backdrop } from '@windmill/react-ui'
 import Container from './layout/Container'
 import MenuIcon from '../icons/menu.svg'
 

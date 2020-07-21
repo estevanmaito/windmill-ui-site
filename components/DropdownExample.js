@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import { Dropdown, DropdownItem, Badge, Button } from 'windmill-react-ui'
+import { Dropdown, DropdownItem, Badge, Button } from '@windmill/react-ui'
 
 function DropdownExample() {
   const [isOpen, setIsOpen] = useState(false)

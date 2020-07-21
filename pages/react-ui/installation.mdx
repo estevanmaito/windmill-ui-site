@@ -9,7 +9,7 @@ description: 'Getting started with Windmill'
 The first of three steps is installing Windmill via npm:
 
 ```sh title=Terminal
-npm install windmill-react-ui
+npm install @windmill/react-ui
 ```
 
 ## Add to Tailwind
@@ -17,7 +17,7 @@ npm install windmill-react-ui
 The second step is to wrap the content of your Tailwind configuration file with Windmill. It will merge the necessary styles and plugins and you can keep using your config file as usual. If you don't have Tailwind configured yet, [see the docs](https://tailwindcss.com/docs/installation).
 
 ```js title=tailwind.config.js
-const windmill = require('windmill-react-ui/config')
+const windmill = require('@windmill/react-ui/config')
 
 module.exports = windmill({
   purge: [],
@@ -36,7 +36,7 @@ The last step is to add it to your React project, enclosing your root component 
 ```jsx title=App.js
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Windmill } from 'windmill-react-ui'
+import { Windmill } from '@windmill/react-ui'
 
 ReactDOM.render(
   <Windmill>

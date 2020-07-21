@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import { Modal, ModalHeader, ModalBody, ModalFooter, Button } from 'windmill-react-ui'
+import { Modal, ModalHeader, ModalBody, ModalFooter, Button } from '@windmill/react-ui'
 
 function ModalPage() {
   const [isModalOpen, setIsModalOpen] = useState(false)

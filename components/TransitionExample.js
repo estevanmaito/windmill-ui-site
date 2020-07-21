@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import { Transition, Button } from 'windmill-react-ui'
+import { Transition, Button } from '@windmill/react-ui'
 
 function TransitionExample() {
   const [isOpen, setIsOpen] = useState(false)
