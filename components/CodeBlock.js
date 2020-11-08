@@ -10,7 +10,7 @@ import codeTheme from '../prismTheme'
 import { ThemeContext } from '../context/ThemeContext'
 import classNames from 'classnames'
 
-export default ({ children, className, previewClassName, live, render, title }) => {
+const CodeBlock = ({ children, className, previewClassName, live, render, title }) => {
   const { theme } = useContext(ThemeContext)
 
   const language = className.replace(/language-/, '')
@@ -87,3 +87,5 @@ export default ({ children, className, previewClassName, live, render, title }) 
     </div>
   )
 }
+
+export default CodeBlock
