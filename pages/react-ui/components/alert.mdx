@@ -1,0 +1,47 @@
+---
+layout: 'docs'
+title: 'Alert'
+description: 'Colored notification'
+---
+
+## Import
+
+```jsx
+import { Alert } from '@windmill/react-ui'
+```
+
+## Type
+
+There are five types of alerts, applied by the prop `type`: `success`, `danger`, `warning`, `info` and `neutral` (default).
+
+Every alert comes with an icon that helps identifying the type of alert for colorblind people.
+
+```jsx live
+<Alert>Lorem ipsum dolor sit</Alert>
+<Alert type="success">Lorem ipsum dolor sit</Alert>
+<Alert type="danger">Lorem ipsum dolor sit</Alert>
+<Alert type="warning">Lorem ipsum dolor sit</Alert>
+<Alert type="info">Lorem ipsum dolor sit</Alert>
+<Alert type="neutral">Lorem ipsum dolor sit</Alert>
+```
+
+## onClose
+
+The `onClose` prop is responsible for showing the close button and executing the passed function.
+
+```jsx live
+<Alert type="success" onClose={() => {}}>
+  Lorem ipsum
+</Alert>
+```
+
+## Props overview
+
+| Prop      | Description                                              | Type                                              | Default   |
+| --------- | -------------------------------------------------------- | ------------------------------------------------- | --------- |
+| `type`    | define the size of component                             | `success`, `danger`, `warning`, `info`, `neutral` | `neutral` |
+| `onClose` | if present, shows a close button and executes a function | `function`                                        |           |
+
+## Customizing
+
+See [Customization](../customization) to learn how to change `defaultTheme` styles.
